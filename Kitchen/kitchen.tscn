@@ -25,17 +25,6 @@ scale = Vector2(10, 10)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Hazard" parent="." instance=ExtResource("2_u0vuy")]
-position = Vector2(-122, 184)
-
-[node name="Hazard2" parent="." instance=ExtResource("2_u0vuy")]
-
-[node name="Hazard3" parent="." instance=ExtResource("2_u0vuy")]
-
-[node name="Hazard4" parent="." instance=ExtResource("2_u0vuy")]
-
-[node name="Hazard5" parent="." instance=ExtResource("2_u0vuy")]
-
 [node name="Play Area" type="StaticBody2D" parent="."]
 collision_layer = 3
 collision_mask = 3
@@ -68,3 +57,16 @@ polygon = PackedVector2Array(-9.40997, -33.034, 216.59, -199.034, 389.59, -194.0
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -99
 texture = ExtResource("3_8ra3a")
+
+[node name="Hazards" type="Node" parent="."]
+
+[node name="Hazard" parent="Hazards" instance=ExtResource("2_u0vuy")]
+position = Vector2(-122, 184)
+
+[node name="Hazard2" parent="Hazards" instance=ExtResource("2_u0vuy")]
+
+[node name="Hazard3" parent="Hazards" instance=ExtResource("2_u0vuy")]
+
+[node name="Hazard4" parent="Hazards" instance=ExtResource("2_u0vuy")]
+
+[node name="Hazard5" parent="Hazards" instance=ExtResource("2_u0vuy")]
