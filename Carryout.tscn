@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhdvi4j6r31jj"]
+
+[ext_resource type="Texture2D" path="res://Images/Background/Carryout Scene Template.jpg" id="1_7g0kg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x1wwc"]
+distance = -1080.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6du5k"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pfoek"]
+distance = -1917.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pw31y"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(962, 540)
+texture = ExtResource("1_7g0kg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Floor" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_x1wwc")
+
+[node name="Left Wall" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_6du5k")
+
+[node name="Right Wall" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_pfoek")
+
+[node name="Ceiling" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_pw31y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-4.49139, 811.873)
+polygon = PackedVector2Array(2.49139, 0.127197, 135.491, 3.1272, 245.491, -92.8728, 1323.49, -78.8728, 1664.49, 64.1272, 1923.49, 217.127, 1924.49, -559.873, 4.49139, -518.873)
