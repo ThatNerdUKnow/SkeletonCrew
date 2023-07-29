@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhbv7e4bu2g1r"
-path="res://.godot/imported/skeleton spritesheet calciumtrice.png-a82292bfdbea0d28fdfc3bc1c799722f.ctex"
+uid="uid://b01mi3bg8abl7"
+path="res://.godot/imported/Carryout Scene Template.jpg-0cb456ea13032b6247d42c90e1418f68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://skeleton spritesheet calciumtrice.png"
-dest_files=["res://.godot/imported/skeleton spritesheet calciumtrice.png-a82292bfdbea0d28fdfc3bc1c799722f.ctex"]
+source_file="res://Carryout/Carryout Scene Template.jpg"
+dest_files=["res://.godot/imported/Carryout Scene Template.jpg-0cb456ea13032b6247d42c90e1418f68.ctex"]
 
 [params]
 

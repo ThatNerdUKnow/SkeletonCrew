@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://babaaajldwesg"
-path="res://.godot/imported/Lettuce.png-216cd8f1b48eaaeaec1e8ec7a40dbd15.ctex"
+uid="uid://dueivge8lbc5s"
+path="res://.godot/imported/Kitchen Scene Template.jpg-dbd405d27286904f532cd51a5362e333.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Lettuce.png"
-dest_files=["res://.godot/imported/Lettuce.png-216cd8f1b48eaaeaec1e8ec7a40dbd15.ctex"]
+source_file="res://Kitchen/Kitchen Scene Template.jpg"
+dest_files=["res://.godot/imported/Kitchen Scene Template.jpg-dbd405d27286904f532cd51a5362e333.ctex"]
 
 [params]
 

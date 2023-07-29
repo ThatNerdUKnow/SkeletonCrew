@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://cr4bjif772tdj"]
 
-[ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://player.tscn" id="1_6oqag"]
-[ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://hazard.tscn" id="2_u0vuy"]
-[ext_resource type="Texture2D" uid="uid://b28bd7cqu80ns" path="res://Kitchen Scene.jpg" id="3_8ra3a"]
+[ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="1_6oqag"]
+[ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="2_u0vuy"]
+[ext_resource type="Texture2D" uid="uid://b28bd7cqu80ns" path="res://Kitchen/Kitchen Scene.jpg" id="3_8ra3a"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pyfho"]
 distance = -219.0

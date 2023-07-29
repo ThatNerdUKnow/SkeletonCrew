@@ -1,7 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://b3vieuaijo4b"]
 
-[ext_resource type="Texture2D" uid="uid://dhbv7e4bu2g1r" path="res://skeleton spritesheet calciumtrice.png" id="1_mae20"]
-[ext_resource type="Script" path="res://player.gd" id="1_outwd"]
+[ext_resource type="Texture2D" uid="uid://dhbv7e4bu2g1r" path="res://Player/skeleton spritesheet calciumtrice.png" id="1_mae20"]
+[ext_resource type="Script" path="res://Player/player.gd" id="1_outwd"]
+
 
 [sub_resource type="Animation" id="Animation_2a6n7"]
 resource_name = "Death"

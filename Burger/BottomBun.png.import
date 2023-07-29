@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8sv1845n5ylg"
-path="res://.godot/imported/The Rat.png-21f7dbd51c2a4037c766c26702cfdbbd.ctex"
+uid="uid://bs57sy4flmiet"
+path="res://.godot/imported/BottomBun.png-82c46fdd79d52ec5354105015124a1ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://The Rat.png"
-dest_files=["res://.godot/imported/The Rat.png-21f7dbd51c2a4037c766c26702cfdbbd.ctex"]
+source_file="res://Burger/BottomBun.png"
+dest_files=["res://.godot/imported/BottomBun.png-82c46fdd79d52ec5354105015124a1ad.ctex"]
 
 [params]
 

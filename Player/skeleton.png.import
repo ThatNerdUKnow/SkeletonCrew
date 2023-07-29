@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o0akbplyj4ma"
-path="res://.godot/imported/The Rat.jpg-78480c63d584f4873b50ce945ec7152b.ctex"
+uid="uid://bl5lhoiq3cw5t"
+path="res://.godot/imported/skeleton.png-385caabc7c664025fc5c791f8dd7c00a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://The Rat.jpg"
-dest_files=["res://.godot/imported/The Rat.jpg-78480c63d584f4873b50ce945ec7152b.ctex"]
+source_file="res://Player/skeleton.png"
+dest_files=["res://.godot/imported/skeleton.png-385caabc7c664025fc5c791f8dd7c00a.ctex"]
 
 [params]
 

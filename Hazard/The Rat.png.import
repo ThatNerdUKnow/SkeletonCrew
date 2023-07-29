@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b28bd7cqu80ns"
-path="res://.godot/imported/Kitchen Scene.jpg-e3dbbcc09f792dafcadaf59faab7c13d.ctex"
+uid="uid://b8sv1845n5ylg"
+path="res://.godot/imported/The Rat.png-6306d3da5954757a5c25ef0daea72a06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Kitchen Scene.jpg"
-dest_files=["res://.godot/imported/Kitchen Scene.jpg-e3dbbcc09f792dafcadaf59faab7c13d.ctex"]
+source_file="res://Hazard/The Rat.png"
+dest_files=["res://.godot/imported/The Rat.png-6306d3da5954757a5c25ef0daea72a06.ctex"]
 
 [params]
 
