@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr4bjif772tdj"]
+[gd_scene load_steps=10 format=3 uid="uid://cr4bjif772tdj"]
 
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://player.tscn" id="1_6oqag"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://hazard.tscn" id="2_u0vuy"]
@@ -16,6 +16,11 @@ distance = -960.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8bqtc"]
 distance = -55.0
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ydldd"]
+vertices = PackedVector2Array(763, 173, 959, 173, 956, 541, -961, 537, 200, 129, 687, 123, -959, 300, -736, 122, -43, 112, 168, 34, -41, 40)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 0, 3, 6), PackedInt32Array(4, 6, 7, 8), PackedInt32Array(9, 4, 8, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-959, 300, -961, 537, 956, 541, 959, 173, 763, 173, 687, 123, 200, 129, 168, 34, -41, 40, -43, 112, -736, 122)])
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f5o48"]
 blend_mode = 3
 
@@ -29,6 +34,8 @@ scale = Vector2(10, 10)
 
 [node name="Hazard" parent="." instance=ExtResource("2_u0vuy")]
 position = Vector2(-122, 184)
+
+[node name="Hazard2" parent="." instance=ExtResource("2_u0vuy")]
 
 [node name="Play Area" type="StaticBody2D" parent="."]
 collision_layer = 3
@@ -58,6 +65,10 @@ shape = SubResource("WorldBoundaryShape2D_8bqtc")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Play Area/BackWall"]
 position = Vector2(-960.59, 298.034)
 polygon = PackedVector2Array(0.590332, 0.965668, 223.59, -176.034, 916.59, -184.034, 920.59, -256.034, 1127.59, -263.034, 1160.59, -167.034, 1651.59, -174.034, 1727.59, -126.034, 1919.59, -121.034, 1922.59, -421.034, -38.4097, -382.034, -37.4097, -383.034)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Play Area"]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_ydldd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -99
