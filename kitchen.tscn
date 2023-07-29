@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cr4bjif772tdj"]
+[gd_scene load_steps=9 format=3 uid="uid://cr4bjif772tdj"]
 
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://player.tscn" id="1_6oqag"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://hazard.tscn" id="2_u0vuy"]
-[ext_resource type="Texture2D" uid="uid://dueivge8lbc5s" path="res://Kitchen Scene Template.jpg" id="3_h377v"]
+[ext_resource type="Texture2D" uid="uid://b28bd7cqu80ns" path="res://Kitchen Scene.jpg" id="3_8ra3a"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pyfho"]
 distance = -219.0
@@ -20,9 +20,6 @@ distance = -55.0
 vertices = PackedVector2Array(763, 173, 959, 173, 956, 541, -961, 537, 200, 129, 687, 123, -959, 300, -736, 122, -43, 112, 168, 34, -41, 40)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 0, 3, 6), PackedInt32Array(4, 6, 7, 8), PackedInt32Array(9, 4, 8, 10)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-959, 300, -961, 537, 956, 541, 959, 173, 763, 173, 687, 123, 200, 129, 168, 34, -41, 40, -43, 112, -736, 122)])
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f5o48"]
-blend_mode = 3
 
 [node name="Kitchen" type="Node2D"]
 
@@ -72,6 +69,4 @@ navigation_polygon = SubResource("NavigationPolygon_ydldd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -99
-material = SubResource("CanvasItemMaterial_f5o48")
-position = Vector2(0, -242)
-texture = ExtResource("3_h377v")
+texture = ExtResource("3_8ra3a")
