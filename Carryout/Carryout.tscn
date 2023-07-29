@@ -50,6 +50,7 @@ position = Vector2(-12, 812)
 polygon = PackedVector2Array(2.49139, 0.127197, 41, 2, 135.491, 3.1272, 245.491, -92.8728, 1058.98, -82.308, 1056, -162, 1256, -159, 1262.94, -79.6591, 1323.49, -78.8728, 1664.49, 64.1272, 1923.49, 217.127, 1924.49, -559.873, 4.49139, -518.873)
 
 [node name="Player" parent="." instance=ExtResource("3_fjtbm")]
+z_index = 100
 position = Vector2(182, 704)
 
 [node name="Hazards" type="Node" parent="."]

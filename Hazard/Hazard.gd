@@ -16,7 +16,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	pass # Replace with function body.
+	pass
 
 func _on_random_timer_timeout():
 	print("_on_random_timer_timeout")

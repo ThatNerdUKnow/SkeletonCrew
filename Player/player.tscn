@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3vieuaijo4b"]
+[gd_scene load_steps=10 format=3 uid="uid://b3vieuaijo4b"]
 
 [ext_resource type="Texture2D" uid="uid://dhbv7e4bu2g1r" path="res://Player/skeleton spritesheet calciumtrice.png" id="1_mae20"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_outwd"]
+[ext_resource type="AudioStream" uid="uid://ctr8ielq1gsbs" path="res://Hazard/Mouse Yell.mp3" id="3_p8llt"]
 
 [sub_resource type="Animation" id="Animation_2a6n7"]
 resource_name = "Death"
@@ -109,5 +110,8 @@ shape = SubResource("CapsuleShape2D_341a0")
 position = Vector2(0, 194)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_341a0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_p8llt")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

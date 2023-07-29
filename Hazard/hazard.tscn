@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4fm56bbvjykt"]
+[gd_scene load_steps=8 format=3 uid="uid://d4fm56bbvjykt"]
 
 [ext_resource type="Script" path="res://Hazard/Hazard.gd" id="1_wtsh2"]
 [ext_resource type="Texture2D" uid="uid://b8sv1845n5ylg" path="res://Hazard/The Rat.png" id="2_blsx8"]
 [ext_resource type="Script" path="res://Hazard/RandomTimer.gd" id="3_ytr77"]
+[ext_resource type="AudioStream" uid="uid://ctr8ielq1gsbs" path="res://Hazard/Mouse Yell.mp3" id="4_lrj6a"]
 
 [sub_resource type="Shader" id="Shader_lh7ed"]
 code = "/**
@@ -51,6 +52,9 @@ MAX_WAIT_TIME = 5
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 remote_path = NodePath("../Node/Sprite2D")
 update_rotation = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lrj6a")
 
 [node name="Node" type="Node" parent="."]
 
