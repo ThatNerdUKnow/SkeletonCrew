@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhko5eit0oten"
+path="res://.godot/imported/East Walk.mp3-dc063ec8992762c27556bc38fc83d9f5.mp3str"
+
+[deps]
+
+source_file="res://Player/East Walk.mp3"
+dest_files=["res://.godot/imported/East Walk.mp3-dc063ec8992762c27556bc38fc83d9f5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://beuenhicnxvif"
+path="res://.godot/imported/North Walk.mp3-0d2c3d74e460b71716bfa95651b718a7.mp3str"
+
+[deps]
+
+source_file="res://Player/North Walk.mp3"
+dest_files=["res://.godot/imported/North Walk.mp3-0d2c3d74e460b71716bfa95651b718a7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

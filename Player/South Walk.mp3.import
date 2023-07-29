@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8bjon0l0oapp"
+path="res://.godot/imported/South Walk.mp3-ae517f412d74484ec5379f6bace90bb9.mp3str"
+
+[deps]
+
+source_file="res://Player/South Walk.mp3"
+dest_files=["res://.godot/imported/South Walk.mp3-ae517f412d74484ec5379f6bace90bb9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
