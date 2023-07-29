@@ -1,10 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr4bjif772tdj"]
+[gd_scene load_steps=9 format=3 uid="uid://cr4bjif772tdj"]
 
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://player.tscn" id="1_6oqag"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://hazard.tscn" id="2_u0vuy"]
+[ext_resource type="Texture2D" uid="uid://dueivge8lbc5s" path="res://Kitchen Scene Template.jpg" id="3_h377v"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pyfho"]
 distance = -219.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_thvyw"]
+distance = -590.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dd0ul"]
+distance = -960.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8bqtc"]
+distance = -55.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_f5o48"]
+blend_mode = 3
 
 [node name="Kitchen" type="Node2D"]
 
@@ -17,11 +30,37 @@ scale = Vector2(10, 10)
 [node name="Hazard" parent="." instance=ExtResource("2_u0vuy")]
 position = Vector2(-122, 184)
 
-[node name="Floor" type="StaticBody2D" parent="."]
+[node name="Play Area" type="StaticBody2D" parent="."]
 collision_layer = 3
 collision_mask = 3
 
-[node name="FloorShape" type="CollisionShape2D" parent="Floor"]
+[node name="FloorShape" type="CollisionShape2D" parent="Play Area"]
 position = Vector2(2, 320)
 scale = Vector2(0.881426, 1)
 shape = SubResource("WorldBoundaryShape2D_pyfho")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Play Area"]
+position = Vector2(-370, -1)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_thvyw")
+
+[node name="RightWall" type="CollisionShape2D" parent="Play Area"]
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_dd0ul")
+
+[node name="Ceiling" type="CollisionShape2D" parent="Play Area"]
+position = Vector2(8, -486)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_8bqtc")
+
+[node name="BackWall" type="StaticBody2D" parent="Play Area"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Play Area/BackWall"]
+position = Vector2(-960.59, 298.034)
+polygon = PackedVector2Array(0.590332, 0.965668, 223.59, -176.034, 916.59, -184.034, 920.59, -256.034, 1127.59, -263.034, 1160.59, -167.034, 1651.59, -174.034, 1727.59, -126.034, 1919.59, -121.034, 1922.59, -421.034, -38.4097, -382.034, -37.4097, -383.034)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -99
+material = SubResource("CanvasItemMaterial_f5o48")
+position = Vector2(0, -242)
+texture = ExtResource("3_h377v")
