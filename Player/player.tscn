@@ -206,7 +206,7 @@ shape = SubResource("CapsuleShape2D_oo12k")
 [node name="BurgerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -285)
 sprite_frames = SubResource("SpriteFrames_i36t7")
-animation = &"Step4"
+animation = &"Step0"
 script = ExtResource("12_y8rqf")
 
 [connection signal="burger_item_added" from="." to="CharacterSprite" method="_on_player_burger_item_added"]
