@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b3vieuaijo4b"]
+[gd_scene load_steps=22 format=3 uid="uid://b3vieuaijo4b"]
 
 [ext_resource type="Texture2D" uid="uid://dhbv7e4bu2g1r" path="res://Player/skeleton spritesheet calciumtrice.png" id="1_mae20"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_outwd"]
@@ -7,7 +7,11 @@
 [ext_resource type="AudioStream" uid="uid://bhko5eit0oten" path="res://Player/East Walk.mp3" id="5_kcili"]
 [ext_resource type="AudioStream" uid="uid://b8bjon0l0oapp" path="res://Player/South Walk.mp3" id="6_4b20f"]
 [ext_resource type="AudioStream" uid="uid://beuenhicnxvif" path="res://Player/North Walk.mp3" id="7_veqck"]
-[ext_resource type="PackedScene" uid="uid://cy8y5q6ik402m" path="res://Burger/burger.tscn" id="8_y4ft2"]
+[ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Parts/BottomBun/BottomBun.png" id="8_nomoa"]
+[ext_resource type="Texture2D" uid="uid://cwylpm7ufyjva" path="res://Burger/WholeBurger/Burger2.png" id="9_xoqxb"]
+[ext_resource type="Texture2D" uid="uid://kjevhp1j7qhs" path="res://Burger/WholeBurger/Burger3.png" id="10_vowjm"]
+[ext_resource type="Texture2D" uid="uid://bjksen7k1si1h" path="res://Burger/WholeBurger/Burger4.png" id="11_4r7jv"]
+[ext_resource type="Script" path="res://Burger/BurgerSprite.gd" id="12_y8rqf"]
 
 [sub_resource type="Animation" id="Animation_2a6n7"]
 resource_name = "Death"
@@ -81,6 +85,20 @@ _data = {
 "Walk": SubResource("Animation_v0nf1")
 }
 
+[sub_resource type="GDScript" id="GDScript_ettrk"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_341a0"]
 radius = 19.0
 height = 128.0
@@ -88,6 +106,46 @@ height = 128.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oo12k"]
 radius = 40.0
 height = 176.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i36t7"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Step0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_nomoa")
+}],
+"loop": true,
+"name": &"Step1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_xoqxb")
+}],
+"loop": true,
+"name": &"Step2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_vowjm")
+}],
+"loop": true,
+"name": &"Step3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_4r7jv")
+}],
+"loop": true,
+"name": &"Step4",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
@@ -105,6 +163,7 @@ scale = Vector2(15.8125, 13.2689)
 texture = ExtResource("1_mae20")
 hframes = 10
 vframes = 5
+script = SubResource("GDScript_ettrk")
 
 [node name="Rat_Detector" type="Area2D" parent="."]
 collision_layer = 0
@@ -135,9 +194,6 @@ stream = ExtResource("6_4b20f")
 [node name="NorthWalk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_veqck")
 
-[node name="Burger" parent="." instance=ExtResource("8_y4ft2")]
-position = Vector2(-2, -286)
-
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
@@ -147,5 +203,13 @@ position = Vector2(-2, -216)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_oo12k")
 
+[node name="BurgerSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -285)
+sprite_frames = SubResource("SpriteFrames_i36t7")
+animation = &"Step4"
+script = ExtResource("12_y8rqf")
+
+[connection signal="burger_item_added" from="." to="CharacterSprite" method="_on_player_burger_item_added"]
+[connection signal="burger_item_added" from="." to="BurgerSprite" method="_on_player_burger_item_added"]
 [connection signal="body_entered" from="Rat_Detector" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

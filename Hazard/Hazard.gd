@@ -19,12 +19,12 @@ func _on_body_entered(body):
 	pass
 
 func _on_random_timer_timeout():
-	print("_on_random_timer_timeout")
+	#print("_on_random_timer_timeout")
 	_timer.reset()
 	# generate a random force
 	var force_magnitude = randi() % (MAX_FORCE - MIN_FORCE) + MIN_FORCE
 	var angle = randf() * 2.0 * PI
 	var force_vector = Vector2(cos(angle), sin(angle)) * force_magnitude
 	
-	print(force_vector)
+	#print(force_vector)
 	apply_central_impulse(force_vector)
