@@ -1,15 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3vieuaijo4b"]
+[gd_scene load_steps=16 format=3 uid="uid://b3vieuaijo4b"]
 
 [ext_resource type="Texture2D" uid="uid://dhbv7e4bu2g1r" path="res://Player/skeleton spritesheet calciumtrice.png" id="1_mae20"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_outwd"]
 [ext_resource type="AudioStream" uid="uid://ctr8ielq1gsbs" path="res://Hazard/Mouse Yell.mp3" id="3_p8llt"]
+[ext_resource type="AudioStream" uid="uid://dqxawq7snuy1f" path="res://Player/West Walk.mp3" id="4_girci"]
+[ext_resource type="AudioStream" uid="uid://bhko5eit0oten" path="res://Player/East Walk.mp3" id="5_kcili"]
+[ext_resource type="AudioStream" uid="uid://b8bjon0l0oapp" path="res://Player/South Walk.mp3" id="6_4b20f"]
+[ext_resource type="AudioStream" uid="uid://beuenhicnxvif" path="res://Player/North Walk.mp3" id="7_veqck"]
+[ext_resource type="PackedScene" uid="uid://cy8y5q6ik402m" path="res://Burger/burger.tscn" id="8_y4ft2"]
 
 [sub_resource type="Animation" id="Animation_2a6n7"]
 resource_name = "Death"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("CharacterSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +31,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("CharacterSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -41,7 +46,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("CharacterSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -58,7 +63,7 @@ step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("CharacterSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -80,6 +85,10 @@ _data = {
 radius = 19.0
 height = 128.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oo12k"]
+radius = 40.0
+height = 176.0
+
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_outwd")
@@ -89,7 +98,7 @@ libraries = {
 "": SubResource("AnimationLibrary_216hc")
 }
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CharacterSprite" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-1, 0)
 scale = Vector2(15.8125, 13.2689)
@@ -97,16 +106,16 @@ texture = ExtResource("1_mae20")
 hframes = 10
 vframes = 5
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Rat_Detector" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rat_Detector"]
 position = Vector2(0, 194)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_341a0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="FeetCollider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 194)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_341a0")
@@ -114,4 +123,29 @@ shape = SubResource("CapsuleShape2D_341a0")
 [node name="RatCollision" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_p8llt")
 
+[node name="WestWalk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_girci")
+
+[node name="EastWalk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_kcili")
+
+[node name="SouthWalk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4b20f")
+
+[node name="NorthWalk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_veqck")
+
+[node name="Burger" parent="." instance=ExtResource("8_y4ft2")]
+position = Vector2(-2, -286)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -216)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oo12k")
+
+[connection signal="body_entered" from="Rat_Detector" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

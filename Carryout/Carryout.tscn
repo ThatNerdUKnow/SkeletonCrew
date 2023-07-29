@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhdvi4j6r31jj"]
+[gd_scene load_steps=11 format=3 uid="uid://dhdvi4j6r31jj"]
 
 [ext_resource type="Texture2D" uid="uid://d1l8swnggre23" path="res://Carryout/Carryout Scene.png" id="1_jm1hd"]
 [ext_resource type="Script" path="res://Carryout/Carryout.gd" id="1_jpchq"]
@@ -17,6 +17,9 @@ distance = -1917.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5kic"]
 size = Vector2(43, 82.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjspw"]
+size = Vector2(207, 34)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jpchq")
@@ -75,4 +78,11 @@ collision_layer = 0
 position = Vector2(-16, 36)
 shape = SubResource("RectangleShape2D_l5kic")
 
+[node name="ScoreArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
+position = Vector2(1146, 666)
+shape = SubResource("RectangleShape2D_tjspw")
+
 [connection signal="body_entered" from="TransitionArea" to="." method="_on_transition_area_body_entered"]
+[connection signal="body_entered" from="ScoreArea" to="." method="_on_score_area_body_entered"]

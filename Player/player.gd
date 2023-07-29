@@ -5,7 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @onready var _animation = $AnimationPlayer
-@onready var _sprite = $Sprite2D
+@onready var _sprite = $CharacterSprite
 
 var facing_direction = 0
 
@@ -46,7 +46,6 @@ func _physics_process(delta):
 
 	sprite_face_direction()
 	move_and_slide()
-
 
 func sprite_face_direction():
 	if facing_direction < 0:

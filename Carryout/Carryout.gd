@@ -13,3 +13,9 @@ func _process(delta):
 
 func _on_transition_area_body_entered(body):
 	get_tree().change_scene_to_file("res://Kitchen/kitchen.tscn") # Replace with function body.
+
+
+func _on_score_area_body_entered(body):
+	# check if Complete Burger on person
+	
+	pass # Replace with function body.

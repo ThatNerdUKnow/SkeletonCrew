@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://brhhyynetvfyg"]
+
+[ext_resource type="Script" path="res://Burger/Parts/Lettuce/Lettuce.gd" id="1_nyvej"]
+[ext_resource type="Texture2D" uid="uid://babaaajldwesg" path="res://Burger/Parts/Lettuce/Lettuce.png" id="1_piswe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nw606"]
+radius = 27.0
+height = 182.0
+
+[node name="Lettuce" type="RigidBody2D"]
+script = ExtResource("1_nyvej")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_piswe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 21)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nw606")
