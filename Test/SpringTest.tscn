@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://duv6it8wlsuag"]
+
+[ext_resource type="Texture2D" uid="uid://cl4d4lcipi5lm" path="res://icon.svg" id="1_psipb"]
+[ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="2_87or7"]
+[ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="3_pj1s4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nb8da"]
+size = Vector2(126, 125)
+
+[node name="SpringTest" type="Node2D"]
+position = Vector2(637, 319)
+
+[node name="StaticBody2D" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(46, 3.99997)
+texture = ExtResource("1_psipb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(46, 5.49997)
+shape = SubResource("RectangleShape2D_nb8da")
+
+[node name="GrooveJoint2D" type="GrooveJoint2D" parent="StaticBody2D"]
+position = Vector2(56, 260)
+rotation = -3.14159
+node_a = NodePath("../../Player")
+node_b = NodePath("..")
+
+[node name="Hazard" parent="." instance=ExtResource("2_87or7")]
+position = Vector2(173, 113)
+mass = 19.32
+
+[node name="Player" parent="." instance=ExtResource("3_pj1s4")]
+position = Vector2(56, 260)
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Player"]
+position = Vector2(0.587341, -11.8943)
+rotation = 4.18006
+scale = Vector2(0.146843, 0.146843)
+node_a = NodePath("../../Hazard")
+node_b = NodePath("..")
+bias = 0.9
+length = 130.0
+rest_length = 800.0
+stiffness = 64.0
+damping = 16.0
