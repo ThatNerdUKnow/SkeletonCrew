@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1cde27ge3l65"]
+
+[ext_resource type="Texture2D" uid="uid://bvc6j0j0nwo8w" path="res://PrepRoom/Prep Room Template.png" id="1_nb5pg"]
+[ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="2_1rm3t"]
+[ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="3_kl4fb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1xh8e"]
+distance = -925.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_klg4u"]
+distance = -1866.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3cjmg"]
+distance = -1896.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qys0p"]
+distance = -567.0
+
+[node name="PrepRoom" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, -134)
+scale = Vector2(1.96065, 1.96065)
+texture = ExtResource("1_nb5pg")
+
+[node name="Player" parent="." instance=ExtResource("2_1rm3t")]
+position = Vector2(21, -101)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-21, 101)
+limit_left = -1850
+limit_top = -1890
+limit_right = 1895
+limit_bottom = 900
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Floor" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_1xh8e")
+
+[node name="LeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_klg4u")
+
+[node name="RightWall" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_3cjmg")
+
+[node name="Ceiling" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2, -624)
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_qys0p")
+
+[node name="FloorClip" type="StaticBody2D" parent="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D/FloorClip"]
+position = Vector2(-1845.57, 922.594)
+polygon = PackedVector2Array(2.57068, -2.59436, 604.571, -508.594, 912.571, -496.594, 1086.57, -683.594, 850.571, -673.594, 1219.57, -935.594, 1743.57, -943.594, 1744.57, -1043.59, 2040.57, -1051.59, 2046.57, -920.594, 2497.57, -944.594, 2889.57, -682.594, 2580.57, -672.594, 2853.57, -411.594, 3226.57, -407.594, 3709.57, -2.59436, 3743.57, -2124.59, -38.4293, -2121.59)
+
+[node name="Hazard" parent="." instance=ExtResource("3_kl4fb")]
+position = Vector2(-1079, 545)
+
+[node name="Hazard2" parent="." instance=ExtResource("3_kl4fb")]
+position = Vector2(-850, 201)
+
+[node name="Hazard3" parent="." instance=ExtResource("3_kl4fb")]
+position = Vector2(850, 201)
+
+[node name="Hazard4" parent="." instance=ExtResource("3_kl4fb")]
+position = Vector2(947, 799)
+
+[node name="Hazard5" parent="." instance=ExtResource("3_kl4fb")]
+position = Vector2(-442, 777)
