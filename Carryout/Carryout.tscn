@@ -51,7 +51,6 @@ polygon = PackedVector2Array(2.49139, 0.127197, 41, 2, 135.491, 3.1272, 245.491,
 
 [node name="Player" parent="." instance=ExtResource("3_fjtbm")]
 position = Vector2(182, 704)
-scale = Vector2(10.79, 10.79)
 
 [node name="Hazards" type="Node" parent="."]
 
