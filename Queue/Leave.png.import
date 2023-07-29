@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ensuy51h341u"
-path="res://.godot/imported/Leave.png-de547d0b131ca2fd6047c018ab0d77af.ctex"
+path="res://.godot/imported/Leave.png-1ed94df8f05bc107ca244f49879d1ca3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Carryout/Leave.png"
-dest_files=["res://.godot/imported/Leave.png-de547d0b131ca2fd6047c018ab0d77af.ctex"]
+source_file="res://Queue/Leave.png"
+dest_files=["res://.godot/imported/Leave.png-1ed94df8f05bc107ca244f49879d1ca3.ctex"]
 
 [params]
 

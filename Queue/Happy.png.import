@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7qihppa51xuc"
-path="res://.godot/imported/Sad.png-d3986c5b4913e4f5135db7e653262248.ctex"
+uid="uid://b32n1srnuhkdj"
+path="res://.godot/imported/Happy.png-71d8f036c2e80b19f6d604727b098f3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Carryout/Sad.png"
-dest_files=["res://.godot/imported/Sad.png-d3986c5b4913e4f5135db7e653262248.ctex"]
+source_file="res://Queue/Happy.png"
+dest_files=["res://.godot/imported/Happy.png-71d8f036c2e80b19f6d604727b098f3c.ctex"]
 
 [params]
 
