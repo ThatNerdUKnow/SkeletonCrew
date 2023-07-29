@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctr8ielq1gsbs"
+path="res://.godot/imported/Mouse Yell.mp3-312eb4412345b31565b5085a0d5afc1c.mp3str"
+
+[deps]
+
+source_file="res://Hazard/Mouse Yell.mp3"
+dest_files=["res://.godot/imported/Mouse Yell.mp3-312eb4412345b31565b5085a0d5afc1c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

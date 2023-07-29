@@ -57,4 +57,5 @@ func sprite_face_direction():
 
 func _on_area_2d_body_entered(body):
 	_animation.play("Death")
+	$AudioStreamPlayer2D.play()
 	#pass # Replace with function body.
