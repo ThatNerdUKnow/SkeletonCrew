@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4fm56bbvjykt"]
+
+[ext_resource type="Script" path="res://Hazard.gd" id="1_dlf36"]
+[ext_resource type="Texture2D" uid="uid://kmx4l01n07fb" path="res://rat.png" id="2_pv5yg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i20du"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jcvdb"]
+radius = 47.0
+height = 152.0
+
+[node name="Hazard" type="RigidBody2D"]
+script = ExtResource("1_dlf36")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_i20du")
+texture = ExtResource("2_pv5yg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jcvdb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

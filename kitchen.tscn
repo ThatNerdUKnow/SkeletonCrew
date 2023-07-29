@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr4bjif772tdj"]
+
+[ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://player.tscn" id="1_6oqag"]
+[ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://hazard.tscn" id="2_u0vuy"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pyfho"]
+distance = -219.0
+
+[node name="Kitchen" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_6oqag")]
+position = Vector2(-395, 181)
+scale = Vector2(10, 10)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Hazard" parent="." instance=ExtResource("2_u0vuy")]
+position = Vector2(-122, 184)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="FloorShape" type="CollisionShape2D" parent="Floor"]
+position = Vector2(2, 320)
+scale = Vector2(0.881426, 1)
+shape = SubResource("WorldBoundaryShape2D_pyfho")
