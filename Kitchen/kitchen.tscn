@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr4bjif772tdj"]
+[gd_scene load_steps=10 format=3 uid="uid://cr4bjif772tdj"]
 
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="1_6oqag"]
+[ext_resource type="Script" path="res://Kitchen/kitchen.gd" id="1_pxxc8"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="2_u0vuy"]
 [ext_resource type="Texture2D" uid="uid://b28bd7cqu80ns" path="res://Kitchen/Kitchen Scene.jpg" id="3_8ra3a"]
 
@@ -16,11 +17,15 @@ distance = -960.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8bqtc"]
 distance = -55.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dc5u"]
+size = Vector2(49, 88)
+
 [node name="Kitchen" type="Node2D"]
+script = ExtResource("1_pxxc8")
 
 [node name="Player" parent="." instance=ExtResource("1_6oqag")]
 z_index = 1
-position = Vector2(-395, 181)
+position = Vector2(734, 77)
 scale = Vector2(10, 10)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -61,12 +66,25 @@ texture = ExtResource("3_8ra3a")
 [node name="Hazards" type="Node" parent="."]
 
 [node name="Hazard" parent="Hazards" instance=ExtResource("2_u0vuy")]
-position = Vector2(-122, 184)
+position = Vector2(-726, 157)
 
 [node name="Hazard2" parent="Hazards" instance=ExtResource("2_u0vuy")]
+position = Vector2(63, 83)
 
 [node name="Hazard3" parent="Hazards" instance=ExtResource("2_u0vuy")]
+position = Vector2(538, 467)
 
 [node name="Hazard4" parent="Hazards" instance=ExtResource("2_u0vuy")]
+position = Vector2(-133, 478)
 
 [node name="Hazard5" parent="Hazards" instance=ExtResource("2_u0vuy")]
+position = Vector2(-759, 480)
+
+[node name="TransitionArea" type="Area2D" parent="."]
+position = Vector2(605, 183)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionArea"]
+position = Vector2(321.5, 14)
+shape = SubResource("RectangleShape2D_0dc5u")
+
+[connection signal="body_entered" from="TransitionArea" to="." method="_on_transition_area_body_entered"]
