@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://d4fm56bbvjykt"]
 
 [ext_resource type="Script" path="res://Hazard.gd" id="1_dlf36"]
-[ext_resource type="Texture2D" uid="uid://kmx4l01n07fb" path="res://rat.png" id="2_pv5yg"]
+[ext_resource type="Texture2D" uid="uid://b8sv1845n5ylg" path="res://The Rat.png" id="2_0mfky"]
 [ext_resource type="Script" path="res://RandomTimer.gd" id="3_mvo1y"]
 
 [sub_resource type="Shader" id="Shader_lh7ed"]
@@ -41,28 +41,30 @@ void fragment() {
 shader = SubResource("Shader_lh7ed")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jcvdb"]
-radius = 47.0
-height = 152.0
+radius = 16.0
+height = 62.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e1qkl"]
 shader = SubResource("Shader_lh7ed")
 
 [node name="Hazard" type="RigidBody2D"]
 collision_layer = 2
+collision_mask = 3
 gravity_scale = 0.0
 linear_damp = 5.0
 script = ExtResource("1_dlf36")
+MAX_FORCE = 4000
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_japef")
-texture = ExtResource("2_pv5yg")
+position = Vector2(5.99998, 1.00002)
+scale = Vector2(0.34, 0.34)
+texture = ExtResource("2_0mfky")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 11)
+position = Vector2(3, 3)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_jcvdb")
-
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [node name="RandomTimer" type="Timer" parent="."]
 script = ExtResource("3_mvo1y")

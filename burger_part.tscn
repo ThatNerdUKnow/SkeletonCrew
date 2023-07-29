@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bag67v0r54tld"]
+
+[ext_resource type="Script" path="res://BurgerPart.gd" id="1_c4lmo"]
+[ext_resource type="Texture2D" uid="uid://cl4d4lcipi5lm" path="res://icon.svg" id="2_v32ed"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3a04m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v32ed")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ne72i"]
+size = Vector2(510, 139)
+
+[node name="BurgerPart" type="RigidBody2D"]
+script = ExtResource("1_c4lmo")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.499987, 0)
+scale = Vector2(3.97656, 1.0625)
+sprite_frames = SubResource("SpriteFrames_3a04m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_ne72i")

@@ -29,18 +29,20 @@ func _physics_process(delta):
 	
 	if direction_x != 0:
 		facing_direction = direction_x
-	
+		
 	if direction_x:
-		_animation.play("Walk")
 		velocity.x = direction_x * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if direction_x == 0:
+		if direction_x == 0 && direction_y == 0:
 			_animation.play("Idle")
 	if direction_y:
 		velocity.y = direction_y * SPEED
 	else:
 		velocity.y = move_toward(velocity.y,0,SPEED)
+		
+	if direction_x || direction_y:
+		_animation.play("Walk")
 
 	sprite_face_direction()
 	move_and_slide()
