@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b3vieuaijo4b"]
+[gd_scene load_steps=22 format=3 uid="uid://b3vieuaijo4b"]
 
 [ext_resource type="Texture2D" uid="uid://dhbv7e4bu2g1r" path="res://Player/skeleton spritesheet calciumtrice.png" id="1_mae20"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_outwd"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b8bjon0l0oapp" path="res://Player/South Walk.mp3" id="6_4b20f"]
 [ext_resource type="AudioStream" uid="uid://beuenhicnxvif" path="res://Player/North Walk.mp3" id="7_veqck"]
 [ext_resource type="Texture2D" uid="uid://ccnkxtfb1jvu3" path="res://Burger/Frame1.png" id="8_i71ks"]
+[ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Bottom/BottomBun.png" id="9_7pnwy"]
 [ext_resource type="Texture2D" uid="uid://cwylpm7ufyjva" path="res://Burger/WholeBurger/Burger2.png" id="9_xoqxb"]
 [ext_resource type="Texture2D" uid="uid://kjevhp1j7qhs" path="res://Burger/WholeBurger/Burger3.png" id="10_vowjm"]
 [ext_resource type="Texture2D" uid="uid://bjksen7k1si1h" path="res://Burger/WholeBurger/Burger4.png" id="11_4r7jv"]
@@ -115,7 +116,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("9_7pnwy")
 }],
 "loop": true,
 "name": &"Step1",
@@ -196,7 +197,7 @@ stream = ExtResource("7_veqck")
 [node name="BurgerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -285)
 sprite_frames = SubResource("SpriteFrames_i36t7")
-animation = &"Step0"
+animation = &"Step1"
 script = ExtResource("12_y8rqf")
 
 [connection signal="burger_item_added" from="." to="CharacterSprite" method="_on_player_burger_item_added"]
