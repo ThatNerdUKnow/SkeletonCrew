@@ -84,6 +84,7 @@ func _on_bun_pickup_area_bottom_bun_pickup():
 	if _burgerState.BurgerStep == 0:
 		print("Bottom Bun Pickup")
 		add_burger_item()
+		$Score1.play()
 	pass # Replace with function body.
 
 
@@ -91,6 +92,7 @@ func _on_lettuce_pickup_area_lettuce_picked_up():
 	if _burgerState.BurgerStep == 2:
 		print("Lettuce Pickup")
 		add_burger_item()
+		$Score2.play()
 	pass # Replace with function body.
 
 
@@ -98,10 +100,12 @@ func _on_patty_area_pickup_patty_picked_up():
 	if _burgerState.BurgerStep == 1:
 		print("Patty Pickup")
 		add_burger_item()
+		$Score3.play()
 
 
 func _on_top_bun_collect_area_top_bun_collected():
 	if _burgerState.BurgerStep == 3:
 		print("Top Bun Pickup")
 		add_burger_item()
+		$Score4.play()
 	pass # Replace with function body.

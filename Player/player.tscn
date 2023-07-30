@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b3vieuaijo4b"]
+[gd_scene load_steps=26 format=3 uid="uid://b3vieuaijo4b"]
 
 [ext_resource type="Texture2D" uid="uid://dhbv7e4bu2g1r" path="res://Player/skeleton spritesheet calciumtrice.png" id="1_mae20"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_outwd"]
@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://kjevhp1j7qhs" path="res://Burger/WholeBurger/Burger3.png" id="10_vowjm"]
 [ext_resource type="Texture2D" uid="uid://bjksen7k1si1h" path="res://Burger/WholeBurger/Burger4.png" id="11_4r7jv"]
 [ext_resource type="Script" path="res://Burger/BurgerSprite.gd" id="12_y8rqf"]
+[ext_resource type="AudioStream" uid="uid://bxndkbshs7htv" path="res://Player/Score1.mp3" id="14_jiu5o"]
+[ext_resource type="AudioStream" uid="uid://cvc6xrsy7wc0j" path="res://Player/Score2.mp3" id="15_0ljxg"]
+[ext_resource type="AudioStream" uid="uid://ddih46j3p5spp" path="res://Player/Score3.mp3" id="16_5xpep"]
+[ext_resource type="AudioStream" uid="uid://dao3emkfnm4v" path="res://Player/Score4.mp3" id="17_lf7wt"]
 
 [sub_resource type="Animation" id="Animation_2a6n7"]
 resource_name = "Death"
@@ -199,6 +203,18 @@ position = Vector2(-3, -285)
 sprite_frames = SubResource("SpriteFrames_i36t7")
 animation = &"Step0"
 script = ExtResource("12_y8rqf")
+
+[node name="Score1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_jiu5o")
+
+[node name="Score2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_0ljxg")
+
+[node name="Score3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_5xpep")
+
+[node name="Score4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_lf7wt")
 
 [connection signal="burger_item_added" from="." to="BurgerSprite" method="_on_player_burger_item_added"]
 [connection signal="body_entered" from="Rat_Detector" to="." method="_on_area_2d_body_entered"]
