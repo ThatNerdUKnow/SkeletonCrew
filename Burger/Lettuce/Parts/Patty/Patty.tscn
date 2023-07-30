@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://c40vc4q5k2kh7"]
 
-[ext_resource type="Texture2D" uid="uid://b5qe6skxo3cy7" path="res://Burger/Patty/Patty.png" id="1_1vcy7"]
+[ext_resource type="Texture2D" uid="uid://b5qe6skxo3cy7" path="res://Burger/Patty/Patty.png" id="1_vli6i"]
 
 [node name="Patty" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_1vcy7")
+texture = ExtResource("1_vli6i")

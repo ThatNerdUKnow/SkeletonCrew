@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqymmu6x7dla6"]
 
-[ext_resource type="Texture2D" uid="uid://babaaajldwesg" path="res://Burger/Parts/Lettuce/Lettuce.png" id="1_216ii"]
+[ext_resource type="Texture2D" uid="uid://babaaajldwesg" path="res://Burger/Lettuce/Lettuce.png" id="1_3abqn"]
 
 [node name="Lettuce" type="Node2D"]
 z_index = 3
@@ -8,4 +8,4 @@ z_as_relative = false
 y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_216ii")
+texture = ExtResource("1_3abqn")

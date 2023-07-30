@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://b1pm8w2ol8ug6"]
 
-[ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Parts/BottomBun/BottomBun.png" id="1_k8s2i"]
+[ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Lettuce/Parts/BottomBun/BottomBun.png" id="1_p1jkv"]
 
 [node name="BottomBun" type="Node2D"]
 z_index = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -3)
-texture = ExtResource("1_k8s2i")
+texture = ExtResource("1_p1jkv")

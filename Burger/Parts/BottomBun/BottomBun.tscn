@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhxyy11fjebrg"]
-
-[ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Parts/BottomBun/BottomBun.png" id="1_lrg64"]
-
-[node name="BottomBun" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_lrg64")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvmwlm1vde5cw"]
+
+[ext_resource type="Texture2D" uid="uid://buk8e8pcnqsk" path="res://Burger/Lettuce/Parts/TopBun/Bun Top.png" id="1_phlrr"]
+
+[node name="TopBun" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_phlrr")

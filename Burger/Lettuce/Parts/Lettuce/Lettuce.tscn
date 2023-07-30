@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://brhhyynetvfyg"]
+
+[ext_resource type="Texture2D" uid="uid://babaaajldwesg" path="res://Burger/Lettuce/Lettuce.png" id="1_xoai7"]
+
+[node name="Lettuce" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xoai7")
