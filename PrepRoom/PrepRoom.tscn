@@ -28,13 +28,13 @@ size = Vector2(3781, 34.75)
 [node name="PrepRoom" type="Node2D"]
 script = ExtResource("1_0emsl")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BackgroundArt" type="Sprite2D" parent="."]
 position = Vector2(15, -134)
 scale = Vector2(1.96065, 1.96065)
 texture = ExtResource("1_b0ql7")
 
 [node name="Player" parent="." instance=ExtResource("2_1rm3t")]
-z_index = 1
+z_index = 5
 position = Vector2(21, 500)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -66,7 +66,7 @@ shape = SubResource("WorldBoundaryShape2D_qys0p")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D/FloorClip"]
 position = Vector2(-1845.57, 922.594)
-polygon = PackedVector2Array(2.57068, -2.59436, 604.571, -508.594, 912.571, -496.594, 1086.57, -683.594, 850.571, -673.594, 1219.57, -935.594, 1743.57, -943.594, 1744.57, -1043.59, 2040.57, -1051.59, 2046.57, -920.594, 2497.57, -944.594, 2889.57, -682.594, 2580.57, -672.594, 2853.57, -411.594, 3226.57, -407.594, 3709.57, -2.59436, 3743.57, -2124.59, -38.4293, -2121.59)
+polygon = PackedVector2Array(2.57068, -2.59436, 604.571, -508.594, 912.571, -496.594, 1086.57, -683.594, 1090.57, -826.594, 1219.57, -935.594, 1743.57, -943.594, 1744.57, -1043.59, 2040.57, -1051.59, 2046.57, -920.594, 2497.57, -944.594, 2605.57, -862.594, 2580.57, -672.594, 2853.57, -411.594, 3226.57, -407.594, 3709.57, -2.59436, 3743.57, -2124.59, -38.4293, -2121.59)
 
 [node name="Hazard" parent="." instance=ExtResource("3_kl4fb")]
 position = Vector2(-1079, 545)
