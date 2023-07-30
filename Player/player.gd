@@ -82,3 +82,9 @@ func _on_bun_pickup_area_bottom_bun_pickup():
 	if _burgerState.BurgerStep == 0:
 		add_burger_item()
 	pass # Replace with function body.
+
+
+func _on_top_bun_collect_area_top_bun_pickup():
+	if _burgerState.BurgerStep == 3:
+		add_burger_item()
+	pass # Replace with function body.
