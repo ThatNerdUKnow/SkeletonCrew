@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbirjc8rvisdr"]
+[gd_scene load_steps=21 format=3 uid="uid://bbirjc8rvisdr"]
 
 [ext_resource type="Script" path="res://PrepRoom/PrepRoom.gd" id="1_0emsl"]
-[ext_resource type="Texture2D" uid="uid://klm6ei2frw3s" path="res://PrepRoom/Prep Room.png" id="1_b0ql7"]
+[ext_resource type="Texture2D" uid="uid://dow57c08e66iq" path="res://PrepRoom/Prep Room.png" id="1_b0ql7"]
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="2_1rm3t"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="3_kl4fb"]
 [ext_resource type="Script" path="res://PrepRoom/ToFreezerArea.gd" id="4_b6str"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://PrepRoom/LettucePickupArea.gd" id="7_xtxpq"]
 [ext_resource type="PackedScene" uid="uid://c40vc4q5k2kh7" path="res://Burger/Parts/Patty/Patty.tscn" id="8_posku"]
 [ext_resource type="Script" path="res://PrepRoom/PattyAreaPickup.gd" id="9_fq5cc"]
+[ext_resource type="AudioStream" uid="uid://cr5rw0skyhhxm" path="res://mcdonalds noises.mp3" id="11_jias4"]
+[ext_resource type="AudioStream" uid="uid://fwxmtkbtea3o" path="res://Ovens.mp3" id="12_0ecir"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1xh8e"]
 distance = -925.0
@@ -127,6 +129,16 @@ position = Vector2(1032, -57)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PattyAreaPickup"]
 position = Vector2(1066.5, 342)
 shape = SubResource("RectangleShape2D_hs3gc")
+
+[node name="KitchenSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_jias4")
+volume_db = -19.676
+autoplay = true
+
+[node name="Ovens" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_0ecir")
+volume_db = 8.432
+autoplay = true
 
 [connection signal="body_entered" from="ToFreezerArea" to="ToFreezerArea" method="_on_body_entered"]
 [connection signal="body_entered" from="ToKitchenArea" to="ToKitchenArea" method="_on_body_entered"]

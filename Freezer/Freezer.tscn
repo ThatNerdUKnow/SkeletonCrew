@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://vtj5yvv8evoj"]
+[gd_scene load_steps=11 format=3 uid="uid://vtj5yvv8evoj"]
 
 [ext_resource type="Script" path="res://Freezer/Freezer.gd" id="1_kc3sl"]
 [ext_resource type="Texture2D" uid="uid://dplu004kngd27" path="res://Freezer/Freezer.png" id="1_negsm"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://Freezer/ToPrepRoomArea.gd" id="3_6yc5u"]
 [ext_resource type="PackedScene" uid="uid://dvmwlm1vde5cw" path="res://Burger/Parts/TopBun/TopBun.tscn" id="4_ka56w"]
 [ext_resource type="Script" path="res://Freezer/TopBunCollectArea.gd" id="6_sxtik"]
+[ext_resource type="AudioStream" uid="uid://c6s6qkdcwkhv2" path="res://Fridge.mp3" id="7_xq56v"]
+[ext_resource type="AudioStream" uid="uid://cr5rw0skyhhxm" path="res://mcdonalds noises.mp3" id="8_v1ah8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmovl"]
 size = Vector2(12478, 133)
@@ -57,6 +59,16 @@ script = ExtResource("6_sxtik")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopBunCollectArea"]
 position = Vector2(673.433, 920)
 shape = SubResource("RectangleShape2D_s5kbo")
+
+[node name="Fridge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_xq56v")
+volume_db = 13.117
+autoplay = true
+
+[node name="Kitchen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_v1ah8")
+volume_db = -27.571
+autoplay = true
 
 [connection signal="body_entered" from="ToPrepRoomArea" to="ToPrepRoomArea" method="_on_body_entered"]
 [connection signal="TopBunCollected" from="TopBunCollectArea" to="Player" method="_on_top_bun_collect_area_top_bun_collected"]

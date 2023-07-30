@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhdvi4j6r31jj"]
+[gd_scene load_steps=14 format=3 uid="uid://dhdvi4j6r31jj"]
 
 [ext_resource type="Texture2D" uid="uid://d1l8swnggre23" path="res://Carryout/Carryout Scene.png" id="1_jm1hd"]
 [ext_resource type="Script" path="res://Carryout/Carryout.gd" id="1_jpchq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="3_fjtbm"]
 [ext_resource type="Script" path="res://Carryout/ScoreArea.gd" id="5_6c5jt"]
 [ext_resource type="Script" path="res://Carryout/ToKitchenArea.gd" id="5_m87in"]
+[ext_resource type="AudioStream" uid="uid://chdxukdcc4u16" path="res://Fans.mp3" id="7_80e55"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x1wwc"]
 distance = -1080.0
@@ -86,6 +87,11 @@ script = ExtResource("5_6c5jt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
 position = Vector2(1146, 666)
 shape = SubResource("RectangleShape2D_tjspw")
+
+[node name="Fans" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_80e55")
+volume_db = 7.495
+autoplay = true
 
 [connection signal="body_entered" from="ToKitchenArea" to="." method="_on_transition_area_body_entered"]
 [connection signal="body_entered" from="ToKitchenArea" to="ToKitchenArea" method="_on_body_entered"]

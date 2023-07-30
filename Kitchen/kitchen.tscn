@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cr4bjif772tdj"]
+[gd_scene load_steps=16 format=3 uid="uid://cr4bjif772tdj"]
 
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="1_6oqag"]
 [ext_resource type="Script" path="res://Kitchen/kitchen.gd" id="1_pxxc8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dhxyy11fjebrg" path="res://Burger/Parts/BottomBun/BottomBun.tscn" id="6_hxphc"]
 [ext_resource type="Script" path="res://Kitchen/BunPickupArea.gd" id="6_mqcwq"]
 [ext_resource type="Script" path="res://Kitchen/ToPrepRoomArea.gd" id="6_u4c10"]
+[ext_resource type="AudioStream" uid="uid://cr5rw0skyhhxm" path="res://mcdonalds noises.mp3" id="8_642wl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pyfho"]
 distance = -219.0
@@ -111,6 +112,10 @@ position = Vector2(318, -206)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BunPickupArea"]
 position = Vector2(414, 61)
 shape = SubResource("RectangleShape2D_53jmh")
+
+[node name="KitchenNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_642wl")
+autoplay = true
 
 [connection signal="body_entered" from="ToCarryoutArea" to="." method="_on_transition_area_body_entered"]
 [connection signal="body_entered" from="ToPrepRoomArea" to="ToPrepRoomArea" method="_on_body_entered"]
