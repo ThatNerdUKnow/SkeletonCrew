@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://babaaajldwesg"
-path="res://.godot/imported/Lettuce.png-51757760033e300d5f727b1bd8403cd8.ctex"
+uid="uid://b5qe6skxo3cy7"
+path="res://.godot/imported/Patty.png-47c90703ebbeeef32acf6db8af70c6cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Burger/Lettuce/Parts/Lettuce/Lettuce.png"
-dest_files=["res://.godot/imported/Lettuce.png-51757760033e300d5f727b1bd8403cd8.ctex"]
+source_file="res://Burger/Parts/Patty/Patty.png"
+dest_files=["res://.godot/imported/Patty.png-47c90703ebbeeef32acf6db8af70c6cf.ctex"]
 
 [params]
 

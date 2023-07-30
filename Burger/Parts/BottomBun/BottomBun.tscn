@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dhxyy11fjebrg"]
 
-[ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Lettuce/Parts/BottomBun/BottomBun.png" id="1_ya0xa"]
+[ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Parts/BottomBun/BottomBun.png" id="1_ya0xa"]
 
 [node name="BottomBun" type="Node2D"]
 
