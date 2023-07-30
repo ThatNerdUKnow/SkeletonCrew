@@ -12,6 +12,7 @@ func _process(delta):
 
 
 func _on_player_burger_item_added(step):
+	print("BurgerSprite: Item Added")
 	match step:
 		0:
 			self.play("Step0")
