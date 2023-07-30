@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" path="res://PrepRoom/PrepRoom.gd" id="1_0emsl"]
 [ext_resource type="Texture2D" uid="uid://bvc6j0j0nwo8w" path="res://PrepRoom/Prep Room Template.png" id="1_nb5pg"]
+
+
+[ext_resource type="Texture2D" uid="uid://dow57c08e66iq" path="res://PrepRoom/Prep Room.png" id="1_b0ql7"]
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="2_1rm3t"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="3_kl4fb"]
 [ext_resource type="Script" path="res://PrepRoom/ToFreezerArea.gd" id="4_b6str"]
@@ -31,7 +34,7 @@ script = ExtResource("1_0emsl")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(15, -134)
 scale = Vector2(1.96065, 1.96065)
-texture = ExtResource("1_nb5pg")
+texture = ExtResource("1_b0ql7")
 
 [node name="Player" parent="." instance=ExtResource("2_1rm3t")]
 position = Vector2(21, 500)

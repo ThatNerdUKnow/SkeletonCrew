@@ -6,7 +6,7 @@ var entrance = entranceVariant.Carryout
 
 var CarryoutEntrance: Vector2 = Vector2(734,77)
 
-var PrepRoomEntrance: Vector2 = Vector2(100,250)
+var PrepRoomEntrance: Vector2 = Vector2(100,150)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
