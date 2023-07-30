@@ -63,6 +63,10 @@ func sprite_face_direction():
 func _on_area_2d_body_entered(body):
 	_animation.play("Death")
 	$RatCollision.play()
+	if  _burgerState.BurgerStep > 0:
+		_burgerState.BurgerStep -= 1
+		burger_item_added.emit(_burgerState.BurgerStep)
+		print("Player score:",_burgerState.BurgerStep)
 	#add_burger_item()
 	#pass # Replace with function body.
 	
