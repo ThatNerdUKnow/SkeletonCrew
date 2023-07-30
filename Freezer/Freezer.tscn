@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpe7ibqg0bpbq"]
+
+[ext_resource type="Texture2D" uid="uid://djx2vgryl8ami" path="res://Freezer/Freezer Template.png" id="1_gft2h"]
+[ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="2_54kkf"]
+[ext_resource type="Script" path="res://Freezer/ToPrepRoomArea.gd" id="3_6yc5u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmovl"]
+size = Vector2(12478, 133)
+
+[node name="Freezer" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(338, -1538)
+scale = Vector2(6.3353, 6.3353)
+texture = ExtResource("1_gft2h")
+
+[node name="Player" parent="." instance=ExtResource("2_54kkf")]
+position = Vector2(101, 754)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = -5745
+limit_top = -4962
+limit_right = 6400
+limit_bottom = 1750
+editor_draw_limits = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-5634.77, 1883.43)
+polygon = PackedVector2Array(-97.2334, -16.4282, 2978.77, -795.428, 4550.77, -749.428, 4910.77, -991.428, 6009.77, -1014.43, 6175.77, -878.428, 6490.77, -883.428, 6404.77, -986.428, 7712.77, -936.428, 11205.8, -14.4282, 12067.8, 22.5718, 12037.8, -6834.43, -165.233, -6894.43)
+
+[node name="ToPrepRoomArea" type="Area2D" parent="."]
+script = ExtResource("3_6yc5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToPrepRoomArea"]
+position = Vector2(377, 1813)
+shape = SubResource("RectangleShape2D_nmovl")
+
+[connection signal="body_entered" from="ToPrepRoomArea" to="ToPrepRoomArea" method="_on_body_entered"]

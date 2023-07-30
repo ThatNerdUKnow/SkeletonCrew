@@ -1,10 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cr4bjif772tdj"]
+[gd_scene load_steps=12 format=3 uid="uid://cr4bjif772tdj"]
 
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="1_6oqag"]
 [ext_resource type="Script" path="res://Kitchen/kitchen.gd" id="1_pxxc8"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="2_u0vuy"]
 [ext_resource type="Texture2D" uid="uid://b28bd7cqu80ns" path="res://Kitchen/Kitchen Scene.jpg" id="3_8ra3a"]
-[ext_resource type="PackedScene" uid="uid://cq601x22b6lrs" path="res://Burger/Parts/BurgerPartsSpawner.tscn" id="5_w275x"]
+[ext_resource type="Script" path="res://Kitchen/ToPrepRoomArea.gd" id="6_u4c10"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pyfho"]
 distance = -219.0
@@ -20,6 +20,9 @@ distance = -55.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dc5u"]
 size = Vector2(49, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg3pp"]
+size = Vector2(1925, 20)
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_pxxc8")
@@ -87,7 +90,12 @@ position = Vector2(605, 183)
 position = Vector2(321.5, 14)
 shape = SubResource("RectangleShape2D_0dc5u")
 
-[node name="BurgerPartsSpawner" parent="." instance=ExtResource("5_w275x")]
-position = Vector2(-821, -192)
+[node name="ToPrepRoomArea" type="Area2D" parent="."]
+script = ExtResource("6_u4c10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToPrepRoomArea"]
+position = Vector2(-0.5, 530)
+shape = SubResource("RectangleShape2D_gg3pp")
 
 [connection signal="body_entered" from="TransitionArea" to="." method="_on_transition_area_body_entered"]
+[connection signal="body_entered" from="ToPrepRoomArea" to="ToPrepRoomArea" method="_on_body_entered"]

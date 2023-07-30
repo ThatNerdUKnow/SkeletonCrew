@@ -6,12 +6,18 @@ const JUMP_VELOCITY = -400.0
 
 @onready var _animation = $AnimationPlayer
 @onready var _sprite = $CharacterSprite
+@onready var _burgerState = get_node("/root/BurgerState")
+
+##@export var burgerStep = 0
+
+signal burger_item_added(step)
 
 var facing_direction = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 #var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+func _ready():
+	burger_item_added.emit(_burgerState.BurgerStep)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -57,4 +63,12 @@ func sprite_face_direction():
 func _on_area_2d_body_entered(body):
 	_animation.play("Death")
 	$RatCollision.play()
+	add_burger_item()
 	#pass # Replace with function body.
+	
+func add_burger_item():
+	if _burgerState.BurgerStep < 4:
+		_burgerState.BurgerStep += 1
+	burger_item_added.emit(_burgerState.BurgerStep)
+	print("Player score:",_burgerState.BurgerStep)
+	
