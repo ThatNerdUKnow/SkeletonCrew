@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1cde27ge3l65"]
+[gd_scene load_steps=15 format=3 uid="uid://bbirjc8rvisdr"]
 
 [ext_resource type="Script" path="res://PrepRoom/PrepRoom.gd" id="1_0emsl"]
-[ext_resource type="Texture2D" uid="uid://klm6ei2frw3s" path="res://PrepRoom/Prep Room.png" id="1_b0ql7"]
+[ext_resource type="Texture2D" uid="uid://dow57c08e66iq" path="res://PrepRoom/Prep Room.png" id="1_b0ql7"]
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="2_1rm3t"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="3_kl4fb"]
 [ext_resource type="Script" path="res://PrepRoom/ToFreezerArea.gd" id="4_b6str"]
 [ext_resource type="Script" path="res://PrepRoom/ToKitchenArea.gd" id="5_pn6oa"]
+[ext_resource type="PackedScene" uid="uid://cqymmu6x7dla6" path="res://Burger/Lettuce/Lettuce.tscn" id="7_6t4mi"]
+[ext_resource type="PackedScene" uid="uid://c40vc4q5k2kh7" path="res://Burger/Parts/Patty/Patty.tscn" id="8_posku"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1xh8e"]
 distance = -925.0
@@ -96,6 +98,12 @@ script = ExtResource("5_pn6oa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToKitchenArea"]
 position = Vector2(22.5, 905.375)
 shape = SubResource("RectangleShape2D_n56u2")
+
+[node name="Lettuce" parent="." instance=ExtResource("7_6t4mi")]
+position = Vector2(-971, -34)
+
+[node name="Patty" parent="." instance=ExtResource("8_posku")]
+position = Vector2(1032, -57)
 
 [connection signal="body_entered" from="ToFreezerArea" to="ToFreezerArea" method="_on_body_entered"]
 [connection signal="body_entered" from="ToKitchenArea" to="ToKitchenArea" method="_on_body_entered"]
