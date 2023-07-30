@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://b8bjon0l0oapp" path="res://Player/South Walk.mp3" id="6_4b20f"]
 [ext_resource type="AudioStream" uid="uid://beuenhicnxvif" path="res://Player/North Walk.mp3" id="7_veqck"]
 [ext_resource type="Texture2D" uid="uid://ccnkxtfb1jvu3" path="res://Burger/Frame1.png" id="8_i71ks"]
-[ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Bottom/BottomBun.png" id="9_7pnwy"]
+[ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Parts/BottomBun/BottomBun.png" id="9_7pnwy"]
 [ext_resource type="Texture2D" uid="uid://cwylpm7ufyjva" path="res://Burger/WholeBurger/Burger2.png" id="9_xoqxb"]
 [ext_resource type="Texture2D" uid="uid://kjevhp1j7qhs" path="res://Burger/WholeBurger/Burger3.png" id="10_vowjm"]
 [ext_resource type="Texture2D" uid="uid://bjksen7k1si1h" path="res://Burger/WholeBurger/Burger4.png" id="11_4r7jv"]

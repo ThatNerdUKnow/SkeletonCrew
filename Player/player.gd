@@ -98,8 +98,9 @@ func _on_patty_area_pickup_patty_picked_up():
 	if _burgerState.BurgerStep == 1:
 		print("Patty Pickup")
 		add_burger_item()
-		
-func _on_top_bun_collect_area_top_bun_pickup():
+
+
+func _on_top_bun_collect_area_top_bun_collected():
 	if _burgerState.BurgerStep == 3:
 		print("Top Bun Pickup")
 		add_burger_item()

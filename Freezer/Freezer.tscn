@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://vtj5yvv8evoj"]
+[gd_scene load_steps=9 format=3 uid="uid://vtj5yvv8evoj"]
 
 [ext_resource type="Script" path="res://Freezer/Freezer.gd" id="1_kc3sl"]
 [ext_resource type="Texture2D" uid="uid://dplu004kngd27" path="res://Freezer/Freezer.png" id="1_negsm"]
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="2_54kkf"]
 [ext_resource type="Script" path="res://Freezer/ToPrepRoomArea.gd" id="3_6yc5u"]
 [ext_resource type="PackedScene" uid="uid://dvmwlm1vde5cw" path="res://Burger/Parts/TopBun/TopBun.tscn" id="4_ka56w"]
-[ext_resource type="Script" path="res://Freezer/TopBunCollectArea.gd" id="6_sfa1j"]
+[ext_resource type="Script" path="res://Freezer/TopBunCollectArea.gd" id="6_sxtik"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmovl"]
 size = Vector2(12478, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5kbo"]
+size = Vector2(603.135, 274)
 
 [node name="Freezer" type="Node2D"]
 script = ExtResource("1_kc3sl")
@@ -49,11 +52,12 @@ visibility_layer = 4
 position = Vector2(665, 682)
 
 [node name="TopBunCollectArea" type="Area2D" parent="."]
-script = ExtResource("6_sfa1j")
+script = ExtResource("6_sxtik")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopBunCollectArea"]
-polygon = PackedVector2Array(374, 875, 538, 1009, 892, 1009, 908, 997, 908, 908, 948, 908, 960, 1036, 519, 1048, 327, 875)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBunCollectArea"]
+position = Vector2(673.433, 920)
+shape = SubResource("RectangleShape2D_s5kbo")
 
 [connection signal="body_entered" from="ToPrepRoomArea" to="ToPrepRoomArea" method="_on_body_entered"]
-[connection signal="TopBunPickup" from="TopBunCollectArea" to="Player" method="_on_top_bun_collect_area_top_bun_pickup"]
-[connection signal="body_entered" from="TopBunCollectArea" to="." method="_on_top_bun_collect_area_body_entered"]
+[connection signal="TopBunCollected" from="TopBunCollectArea" to="Player" method="_on_top_bun_collect_area_top_bun_collected"]
+[connection signal="body_entered" from="TopBunCollectArea" to="TopBunCollectArea" method="_on_body_entered"]
