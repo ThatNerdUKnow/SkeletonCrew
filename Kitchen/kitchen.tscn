@@ -115,6 +115,7 @@ shape = SubResource("RectangleShape2D_53jmh")
 
 [node name="KitchenNoise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_642wl")
+volume_db = -7.495
 autoplay = true
 
 [connection signal="body_entered" from="ToCarryoutArea" to="." method="_on_transition_area_body_entered"]

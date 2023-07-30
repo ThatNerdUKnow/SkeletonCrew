@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhdvi4j6r31jj"]
+[gd_scene load_steps=15 format=3 uid="uid://dhdvi4j6r31jj"]
 
 [ext_resource type="Texture2D" uid="uid://d1l8swnggre23" path="res://Carryout/Carryout Scene.png" id="1_jm1hd"]
 [ext_resource type="Script" path="res://Carryout/Carryout.gd" id="1_jpchq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Carryout/ScoreArea.gd" id="5_6c5jt"]
 [ext_resource type="Script" path="res://Carryout/ToKitchenArea.gd" id="5_m87in"]
 [ext_resource type="AudioStream" uid="uid://chdxukdcc4u16" path="res://Fans.mp3" id="7_80e55"]
+[ext_resource type="AudioStream" uid="uid://kgooc27bk5p6" path="res://Talking.mp3" id="8_owgu5"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x1wwc"]
 distance = -1080.0
@@ -90,8 +91,17 @@ shape = SubResource("RectangleShape2D_tjspw")
 
 [node name="Fans" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_80e55")
-volume_db = 7.495
+volume_db = -4.686
 autoplay = true
+attenuation = 0.732043
+panning_strength = 0.25
+
+[node name="Talking" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_owgu5")
+volume_db = 14.054
+autoplay = true
+attenuation = 0.784584
+panning_strength = 0.0
 
 [connection signal="body_entered" from="ToKitchenArea" to="." method="_on_transition_area_body_entered"]
 [connection signal="body_entered" from="ToKitchenArea" to="ToKitchenArea" method="_on_body_entered"]
