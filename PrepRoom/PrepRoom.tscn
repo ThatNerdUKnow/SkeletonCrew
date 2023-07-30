@@ -72,10 +72,10 @@ polygon = PackedVector2Array(2.57068, -2.59436, 604.571, -508.594, 912.571, -496
 position = Vector2(-1079, 545)
 
 [node name="Hazard2" parent="." instance=ExtResource("3_kl4fb")]
-position = Vector2(-850, 201)
+position = Vector2(-653, 140)
 
 [node name="Hazard3" parent="." instance=ExtResource("3_kl4fb")]
-position = Vector2(850, 201)
+position = Vector2(668, 118)
 
 [node name="Hazard4" parent="." instance=ExtResource("3_kl4fb")]
 position = Vector2(947, 799)
