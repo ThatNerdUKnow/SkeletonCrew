@@ -199,6 +199,4 @@ sprite_frames = SubResource("SpriteFrames_i36t7")
 animation = &"Step0"
 script = ExtResource("12_y8rqf")
 
-[connection signal="burger_item_added" from="." to="CharacterSprite" method="_on_player_burger_item_added"]
-[connection signal="burger_item_added" from="." to="BurgerSprite" method="_on_player_burger_item_added"]
 [connection signal="body_entered" from="Rat_Detector" to="." method="_on_area_2d_body_entered"]
