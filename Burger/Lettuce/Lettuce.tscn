@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqymmu6x7dla6"]
+[gd_scene load_steps=3 format=3 uid="uid://cqymmu6x7dla6"]
 
 [ext_resource type="Texture2D" uid="uid://babaaajldwesg" path="res://Burger/Parts/Lettuce/Lettuce.png" id="1_216ii"]
-[ext_resource type="Script" path="res://Burger/Lettuce/Lettuce.gd" id="1_fjpt7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04ywc"]
 size = Vector2(176, 21)
@@ -12,7 +11,6 @@ z_as_relative = false
 y_sort_enabled = true
 collision_layer = 4
 collision_mask = 5
-script = ExtResource("1_fjpt7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_216ii")

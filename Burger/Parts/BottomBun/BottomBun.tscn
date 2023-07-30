@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhxyy11fjebrg"]
+[gd_scene load_steps=3 format=3 uid="uid://dhxyy11fjebrg"]
 
-[ext_resource type="Script" path="res://Burger/Parts/BottomBun/BottomBun.gd" id="1_iax3s"]
 [ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Parts/BottomBun/BottomBun.png" id="1_lrg64"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v7408"]
@@ -10,7 +9,6 @@ height = 184.0
 [node name="BottomBun" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 5
-script = ExtResource("1_iax3s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lrg64")
