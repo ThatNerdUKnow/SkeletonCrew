@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr4bjif772tdj"]
+[gd_scene load_steps=15 format=3 uid="uid://cr4bjif772tdj"]
 
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="1_6oqag"]
 [ext_resource type="Script" path="res://Kitchen/kitchen.gd" id="1_pxxc8"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="2_u0vuy"]
 [ext_resource type="Texture2D" uid="uid://b28bd7cqu80ns" path="res://Kitchen/Kitchen Scene.jpg" id="3_8ra3a"]
 [ext_resource type="PackedScene" uid="uid://dhxyy11fjebrg" path="res://Burger/Parts/BottomBun/BottomBun.tscn" id="6_hxphc"]
+[ext_resource type="Script" path="res://Kitchen/BunPickupArea.gd" id="6_mqcwq"]
 [ext_resource type="Script" path="res://Kitchen/ToPrepRoomArea.gd" id="6_u4c10"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pyfho"]
@@ -24,6 +25,9 @@ size = Vector2(49, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gg3pp"]
 size = Vector2(1925, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53jmh"]
+size = Vector2(602, 174)
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_pxxc8")
@@ -98,8 +102,17 @@ script = ExtResource("6_u4c10")
 position = Vector2(-0.5, 530)
 shape = SubResource("RectangleShape2D_gg3pp")
 
-[node name="BottomBun" parent="." instance=ExtResource("6_hxphc")]
+[node name="BunPickupArea" type="Area2D" parent="."]
+script = ExtResource("6_mqcwq")
+
+[node name="BottomBun" parent="BunPickupArea" instance=ExtResource("6_hxphc")]
 position = Vector2(318, -206)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BunPickupArea"]
+position = Vector2(414, 61)
+shape = SubResource("RectangleShape2D_53jmh")
 
 [connection signal="body_entered" from="ToCarryoutArea" to="." method="_on_transition_area_body_entered"]
 [connection signal="body_entered" from="ToPrepRoomArea" to="ToPrepRoomArea" method="_on_body_entered"]
+[connection signal="BottomBunPickup" from="BunPickupArea" to="Player" method="_on_bun_pickup_area_bottom_bun_pickup"]
+[connection signal="body_entered" from="BunPickupArea" to="BunPickupArea" method="_on_body_entered"]

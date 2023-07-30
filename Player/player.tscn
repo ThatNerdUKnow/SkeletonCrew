@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b3vieuaijo4b"]
+[gd_scene load_steps=21 format=3 uid="uid://b3vieuaijo4b"]
 
 [ext_resource type="Texture2D" uid="uid://dhbv7e4bu2g1r" path="res://Player/skeleton spritesheet calciumtrice.png" id="1_mae20"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_outwd"]
@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bhko5eit0oten" path="res://Player/East Walk.mp3" id="5_kcili"]
 [ext_resource type="AudioStream" uid="uid://b8bjon0l0oapp" path="res://Player/South Walk.mp3" id="6_4b20f"]
 [ext_resource type="AudioStream" uid="uid://beuenhicnxvif" path="res://Player/North Walk.mp3" id="7_veqck"]
-[ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Parts/BottomBun/BottomBun.png" id="8_nomoa"]
+[ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Bottom/BottomBun.png" id="8_nomoa"]
 [ext_resource type="Texture2D" uid="uid://cwylpm7ufyjva" path="res://Burger/WholeBurger/Burger2.png" id="9_xoqxb"]
 [ext_resource type="Texture2D" uid="uid://kjevhp1j7qhs" path="res://Burger/WholeBurger/Burger3.png" id="10_vowjm"]
 [ext_resource type="Texture2D" uid="uid://bjksen7k1si1h" path="res://Burger/WholeBurger/Burger4.png" id="11_4r7jv"]
@@ -103,10 +103,6 @@ func _process(delta):
 radius = 19.0
 height = 128.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oo12k"]
-radius = 40.0
-height = 176.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_i36t7"]
 animations = [{
 "frames": [],
@@ -194,15 +190,6 @@ stream = ExtResource("6_4b20f")
 [node name="NorthWalk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_veqck")
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2, -216)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_oo12k")
-
 [node name="BurgerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-3, -285)
 sprite_frames = SubResource("SpriteFrames_i36t7")
@@ -212,4 +199,3 @@ script = ExtResource("12_y8rqf")
 [connection signal="burger_item_added" from="." to="CharacterSprite" method="_on_player_burger_item_added"]
 [connection signal="burger_item_added" from="." to="BurgerSprite" method="_on_player_burger_item_added"]
 [connection signal="body_entered" from="Rat_Detector" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
