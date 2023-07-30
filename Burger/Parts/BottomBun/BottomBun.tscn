@@ -1,19 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhxyy11fjebrg"]
+[gd_scene load_steps=2 format=3 uid="uid://dhxyy11fjebrg"]
 
 [ext_resource type="Texture2D" uid="uid://bs57sy4flmiet" path="res://Burger/Parts/BottomBun/BottomBun.png" id="1_lrg64"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v7408"]
-radius = 37.0
-height = 184.0
-
-[node name="BottomBun" type="RigidBody2D"]
-collision_layer = 4
-collision_mask = 5
+[node name="BottomBun" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_lrg64")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 70)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_v7408")

@@ -1,21 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c40vc4q5k2kh7"]
+[gd_scene load_steps=2 format=3 uid="uid://c40vc4q5k2kh7"]
 
 [ext_resource type="Texture2D" uid="uid://b5qe6skxo3cy7" path="res://Burger/Patty/Patty.png" id="1_1vcy7"]
-[ext_resource type="Script" path="res://Burger/Parts/Patty/Patty.gd" id="1_diqfp"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2n7f6"]
-radius = 39.0
-height = 170.0
-
-[node name="Patty" type="RigidBody2D"]
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("1_diqfp")
+[node name="Patty" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_1vcy7")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 40)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_2n7f6")
