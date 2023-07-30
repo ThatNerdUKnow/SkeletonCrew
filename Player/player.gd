@@ -71,8 +71,10 @@ func _on_area_2d_body_entered(body):
 	#pass # Replace with function body.
 	
 func add_burger_item():
+	print("add_burger_item")
 	if _burgerState.BurgerStep < 4:
 		_burgerState.BurgerStep += 1
+	print("Emitting score signal with value", _burgerState.BurgerStep)
 	burger_item_added.emit(_burgerState.BurgerStep)
 	print("Player score:",_burgerState.BurgerStep)
 	
@@ -80,20 +82,25 @@ func add_burger_item():
 
 func _on_bun_pickup_area_bottom_bun_pickup():
 	if _burgerState.BurgerStep == 0:
+		print("Bottom Bun Pickup")
 		add_burger_item()
 	pass # Replace with function body.
 
 
 func _on_lettuce_pickup_area_lettuce_picked_up():
 	if _burgerState.BurgerStep == 2:
+		print("Lettuce Pickup")
 		add_burger_item()
 	pass # Replace with function body.
 
 
 func _on_patty_area_pickup_patty_picked_up():
 	if _burgerState.BurgerStep == 1:
+		print("Patty Pickup")
+		add_burger_item()
 		
 func _on_top_bun_collect_area_top_bun_pickup():
 	if _burgerState.BurgerStep == 3:
+		print("Top Bun Pickup")
 		add_burger_item()
 	pass # Replace with function body.
