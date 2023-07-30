@@ -1,13 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbirjc8rvisdr"]
+[gd_scene load_steps=19 format=3 uid="uid://bbirjc8rvisdr"]
 
 [ext_resource type="Script" path="res://PrepRoom/PrepRoom.gd" id="1_0emsl"]
-[ext_resource type="Texture2D" uid="uid://dow57c08e66iq" path="res://PrepRoom/Prep Room.png" id="1_b0ql7"]
+[ext_resource type="Texture2D" uid="uid://klm6ei2frw3s" path="res://PrepRoom/Prep Room.png" id="1_b0ql7"]
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="2_1rm3t"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="3_kl4fb"]
 [ext_resource type="Script" path="res://PrepRoom/ToFreezerArea.gd" id="4_b6str"]
 [ext_resource type="Script" path="res://PrepRoom/ToKitchenArea.gd" id="5_pn6oa"]
 [ext_resource type="PackedScene" uid="uid://cqymmu6x7dla6" path="res://Burger/Lettuce/Lettuce.tscn" id="7_6t4mi"]
+[ext_resource type="Script" path="res://PrepRoom/LettucePickupArea.gd" id="7_xtxpq"]
 [ext_resource type="PackedScene" uid="uid://c40vc4q5k2kh7" path="res://Burger/Parts/Patty/Patty.tscn" id="8_posku"]
+[ext_resource type="Script" path="res://PrepRoom/PattyAreaPickup.gd" id="9_fq5cc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1xh8e"]
 distance = -925.0
@@ -26,6 +28,12 @@ size = Vector2(390, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n56u2"]
 size = Vector2(3781, 34.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3237"]
+size = Vector2(293, 507)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hs3gc"]
+size = Vector2(679, 452)
 
 [node name="PrepRoom" type="Node2D"]
 script = ExtResource("1_0emsl")
@@ -99,11 +107,31 @@ script = ExtResource("5_pn6oa")
 position = Vector2(22.5, 905.375)
 shape = SubResource("RectangleShape2D_n56u2")
 
-[node name="Lettuce" parent="." instance=ExtResource("7_6t4mi")]
+[node name="LettucePickupArea" type="Area2D" parent="."]
+script = ExtResource("7_xtxpq")
+
+[node name="Lettuce" parent="LettucePickupArea" instance=ExtResource("7_6t4mi")]
 position = Vector2(-971, -34)
 
-[node name="Patty" parent="." instance=ExtResource("8_posku")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LettucePickupArea"]
+position = Vector2(-999.5, 336.5)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_y3237")
+
+[node name="PattyAreaPickup" type="Area2D" parent="."]
+script = ExtResource("9_fq5cc")
+
+[node name="Patty" parent="PattyAreaPickup" instance=ExtResource("8_posku")]
 position = Vector2(1032, -57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PattyAreaPickup"]
+position = Vector2(1066.5, 342)
+shape = SubResource("RectangleShape2D_hs3gc")
 
 [connection signal="body_entered" from="ToFreezerArea" to="ToFreezerArea" method="_on_body_entered"]
 [connection signal="body_entered" from="ToKitchenArea" to="ToKitchenArea" method="_on_body_entered"]
+[connection signal="LettucePickedUp" from="LettucePickupArea" to="." method="_on_lettuce_pickup_area_lettuce_picked_up"]
+[connection signal="LettucePickedUp" from="LettucePickupArea" to="Player" method="_on_lettuce_pickup_area_lettuce_picked_up"]
+[connection signal="body_entered" from="LettucePickupArea" to="LettucePickupArea" method="_on_body_entered"]
+[connection signal="PattyPickedUp" from="PattyAreaPickup" to="Player" method="_on_patty_area_pickup_patty_picked_up"]
+[connection signal="body_entered" from="PattyAreaPickup" to="PattyAreaPickup" method="_on_body_entered"]

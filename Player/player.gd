@@ -84,6 +84,15 @@ func _on_bun_pickup_area_bottom_bun_pickup():
 	pass # Replace with function body.
 
 
+func _on_lettuce_pickup_area_lettuce_picked_up():
+	if _burgerState.BurgerStep == 2:
+		add_burger_item()
+	pass # Replace with function body.
+
+
+func _on_patty_area_pickup_patty_picked_up():
+	if _burgerState.BurgerStep == 1:
+		
 func _on_top_bun_collect_area_top_bun_pickup():
 	if _burgerState.BurgerStep == 3:
 		add_burger_item()
