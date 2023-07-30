@@ -14,5 +14,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if _BurgerState.BurgerStep == 4:
-		get_tree().change_scene_to_file("res://EndGame/End.tscn")
+		if body.name == "Player":
+			get_tree().change_scene_to_file("res://EndGame/End.tscn")
 	pass # Replace with function body.

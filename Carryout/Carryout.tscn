@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhdvi4j6r31jj"]
+[gd_scene load_steps=13 format=3 uid="uid://dhdvi4j6r31jj"]
 
 [ext_resource type="Texture2D" uid="uid://d1l8swnggre23" path="res://Carryout/Carryout Scene.png" id="1_jm1hd"]
 [ext_resource type="Script" path="res://Carryout/Carryout.gd" id="1_jpchq"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="2_22n7w"]
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="3_fjtbm"]
 [ext_resource type="Script" path="res://Carryout/ScoreArea.gd" id="5_6c5jt"]
+[ext_resource type="Script" path="res://Carryout/ToKitchenArea.gd" id="5_m87in"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x1wwc"]
 distance = -1080.0
@@ -71,11 +72,11 @@ position = Vector2(902, 925)
 [node name="Hazard4" parent="Hazards" instance=ExtResource("2_22n7w")]
 position = Vector2(1351, 821)
 
-[node name="TransitionArea" type="Area2D" parent="."]
+[node name="ToKitchenArea" type="Area2D" parent="."]
 position = Vector2(38, 823)
-collision_layer = 0
+script = ExtResource("5_m87in")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToKitchenArea"]
 position = Vector2(-16, 36)
 shape = SubResource("RectangleShape2D_l5kic")
 
@@ -86,6 +87,7 @@ script = ExtResource("5_6c5jt")
 position = Vector2(1146, 666)
 shape = SubResource("RectangleShape2D_tjspw")
 
-[connection signal="body_entered" from="TransitionArea" to="." method="_on_transition_area_body_entered"]
+[connection signal="body_entered" from="ToKitchenArea" to="." method="_on_transition_area_body_entered"]
+[connection signal="body_entered" from="ToKitchenArea" to="ToKitchenArea" method="_on_body_entered"]
 [connection signal="body_entered" from="ScoreArea" to="." method="_on_score_area_body_entered"]
 [connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]
