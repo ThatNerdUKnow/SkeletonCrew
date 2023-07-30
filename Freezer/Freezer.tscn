@@ -1,14 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://vtj5yvv8evoj"]
+[gd_scene load_steps=8 format=3 uid="uid://vtj5yvv8evoj"]
 
+[ext_resource type="Script" path="res://Freezer/Freezer.gd" id="1_kc3sl"]
 [ext_resource type="Texture2D" uid="uid://dplu004kngd27" path="res://Freezer/Freezer.png" id="1_negsm"]
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="2_54kkf"]
 [ext_resource type="Script" path="res://Freezer/ToPrepRoomArea.gd" id="3_6yc5u"]
 [ext_resource type="PackedScene" uid="uid://dvmwlm1vde5cw" path="res://Burger/Parts/TopBun/TopBun.tscn" id="4_ka56w"]
+[ext_resource type="Script" path="res://Freezer/TopBunCollectArea.gd" id="6_sfa1j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmovl"]
 size = Vector2(12478, 133)
 
 [node name="Freezer" type="Node2D"]
+script = ExtResource("1_kc3sl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(338, -1538)
@@ -16,7 +19,7 @@ scale = Vector2(6.3353, 6.3353)
 texture = ExtResource("1_negsm")
 
 [node name="Player" parent="." instance=ExtResource("2_54kkf")]
-position = Vector2(101, 754)
+position = Vector2(-246, 1296)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.265, 0.265)
@@ -30,7 +33,7 @@ editor_draw_limits = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-5634.77, 1883.43)
-polygon = PackedVector2Array(-97.2334, -16.4282, 2978.77, -795.428, 3497.77, -776.43, 3573.77, -746.43, 3645.77, -742.43, 3695.77, -706.43, 3778.77, -703.43, 3815.77, -671.43, 3990.77, -683.43, 4081.78, -713.431, 4229.77, -702.43, 4286.58, -757.158, 4550.77, -749.428, 4910.77, -991.428, 6009.77, -1014.43, 6175.77, -878.428, 6490.77, -883.428, 6404.77, -986.428, 7712.77, -936.428, 11205.8, -14.4282, 12067.8, 22.5718, 12037.8, -6834.43, -165.233, -6894.43)
+polygon = PackedVector2Array(-97.2334, -16.4282, 2978.77, -795.428, 3497.77, -776.43, 3573.77, -746.43, 3645.77, -742.43, 3695.77, -706.43, 3778.77, -703.43, 3815.77, -671.43, 3990.77, -683.43, 4081.78, -713.431, 4229.77, -702.43, 4286.58, -757.158, 4550.77, -749.428, 4910.77, -991.428, 6009.77, -1014.43, 6175.77, -878.428, 6521.77, -880.43, 6535.77, -890.43, 6537.77, -982.43, 7712.77, -936.428, 11205.8, -14.4282, 12067.8, 22.5718, 12037.8, -6834.43, -165.233, -6894.43)
 
 [node name="ToPrepRoomArea" type="Area2D" parent="."]
 script = ExtResource("3_6yc5u")
@@ -42,4 +45,12 @@ shape = SubResource("RectangleShape2D_nmovl")
 [node name="TopBun" parent="." instance=ExtResource("4_ka56w")]
 position = Vector2(665, 682)
 
+[node name="TopBunCollectArea" type="Area2D" parent="."]
+script = ExtResource("6_sfa1j")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopBunCollectArea"]
+polygon = PackedVector2Array(374, 875, 538, 1009, 892, 1009, 908, 997, 908, 908, 948, 908, 960, 1036, 519, 1048, 327, 875)
+
 [connection signal="body_entered" from="ToPrepRoomArea" to="ToPrepRoomArea" method="_on_body_entered"]
+[connection signal="TopBunPickup" from="TopBunCollectArea" to="Player" method="_on_top_bun_collect_area_top_bun_pickup"]
+[connection signal="body_entered" from="TopBunCollectArea" to="." method="_on_top_bun_collect_area_body_entered"]
