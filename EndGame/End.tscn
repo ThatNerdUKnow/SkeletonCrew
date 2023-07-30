@@ -1,14 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://btwjj2voimclb"]
+[gd_scene load_steps=11 format=3 uid="uid://btwjj2voimclb"]
 
 [ext_resource type="Script" path="res://EndGame/Button.gd" id="1_0xuw4"]
 [ext_resource type="Script" path="res://EndGame/End.gd" id="1_ftx3o"]
 [ext_resource type="AudioStream" uid="uid://cwhehpud8abi8" path="res://EndGame/You Win.mp3" id="2_nprkl"]
+[ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="4_h7n0c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dtm3m"]
+bg_color = Color(0.6, 0.6, 0.6, 0.466667)
 
 [sub_resource type="LabelSettings" id="LabelSettings_e5rqg"]
 font_size = 72
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bmq3d"]
+distance = -82.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hkb1x"]
+distance = -100.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_y6old"]
+distance = -1167.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_giavv"]
+distance = -801.0
+
 [node name="End" type="Node2D"]
 script = ExtResource("1_ftx3o")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -1
+offset_left = 535.0
+offset_top = 129.0
+offset_right = 1385.0
+offset_bottom = 820.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dtm3m")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 793.0
@@ -29,5 +53,176 @@ offset_bottom = 602.0
 theme_override_font_sizes/font_size = 40
 text = "Play Again"
 script = ExtResource("1_0xuw4")
+
+[node name="Collision Border" type="StaticBody2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="Collision Border"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_bmq3d")
+
+[node name="Left" type="CollisionShape2D" parent="Collision Border"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_hkb1x")
+
+[node name="Bottom" type="CollisionShape2D" parent="Collision Border"]
+shape = SubResource("WorldBoundaryShape2D_y6old")
+
+[node name="Right" type="CollisionShape2D" parent="Collision Border"]
+position = Vector2(1235, 10)
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_giavv")
+
+[node name="Rat Pit" type="Node2D" parent="."]
+z_index = -5
+
+[node name="Hazard" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(92, 77)
+
+[node name="Hazard2" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1731, 1093)
+
+[node name="Hazard3" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(417, 1074)
+
+[node name="Hazard4" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(-25, 970)
+
+[node name="Hazard5" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(-17, 319)
+
+[node name="Hazard6" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1223, -4)
+
+[node name="Hazard7" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(795, -12)
+
+[node name="Hazard8" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(242, 0)
+
+[node name="Hazard9" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(-11, 644)
+
+[node name="Hazard10" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1110, 1076)
+
+[node name="Hazard11" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1825, 493)
+
+[node name="Hazard12" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1808, 249)
+
+[node name="Hazard13" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1444, 642)
+
+[node name="Hazard14" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1431, 240)
+
+[node name="Hazard15" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1435, 389)
+
+[node name="Hazard16" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(91, 204)
+
+[node name="Hazard17" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(655, 459)
+
+[node name="Hazard18" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(942, 183)
+
+[node name="Hazard19" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1605, 849)
+
+[node name="Hazard20" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(474, 659)
+
+[node name="Hazard21" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(98, 530)
+
+[node name="Hazard22" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1410, 41)
+
+[node name="Hazard23" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1582, 32)
+
+[node name="Hazard24" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1769, 674)
+
+[node name="Hazard25" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1167, 819)
+
+[node name="Hazard26" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(542, 855)
+
+[node name="Hazard27" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(462, 66)
+
+[node name="Hazard28" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(317, 192)
+
+[node name="Hazard29" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(113, 964)
+
+[node name="Hazard30" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(931, 315)
+
+[node name="Hazard31" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(829, 428)
+
+[node name="Hazard32" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1265, 687)
+
+[node name="Hazard33" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(719, 238)
+
+[node name="Hazard34" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1187, 251)
+
+[node name="Hazard35" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(747, 594)
+
+[node name="Hazard36" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(647, 946)
+
+[node name="Hazard37" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(211, 589)
+
+[node name="Hazard38" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(428, 445)
+
+[node name="Hazard39" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(738, 83)
+
+[node name="Hazard40" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(451, 211)
+
+[node name="Hazard41" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1406, 980)
+
+[node name="Hazard42" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1786, 90)
+
+[node name="Hazard43" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1748, 389)
+
+[node name="Hazard44" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1761, 910)
+
+[node name="Hazard45" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1029, 90)
+
+[node name="Hazard46" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(942, 946)
+
+[node name="Hazard47" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(251, 762)
+
+[node name="Hazard48" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1542, 498)
+
+[node name="Hazard49" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(1601, 138)
+
+[node name="Hazard50" parent="Rat Pit" instance=ExtResource("4_h7n0c")]
+position = Vector2(177, 341)
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
