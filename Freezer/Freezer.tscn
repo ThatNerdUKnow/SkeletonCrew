@@ -19,6 +19,7 @@ scale = Vector2(6.3353, 6.3353)
 texture = ExtResource("1_negsm")
 
 [node name="Player" parent="." instance=ExtResource("2_54kkf")]
+z_index = 1
 position = Vector2(-246, 1296)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -43,6 +44,8 @@ position = Vector2(377, 1813)
 shape = SubResource("RectangleShape2D_nmovl")
 
 [node name="TopBun" parent="." instance=ExtResource("4_ka56w")]
+light_mask = 4
+visibility_layer = 4
 position = Vector2(665, 682)
 
 [node name="TopBunCollectArea" type="Area2D" parent="."]
