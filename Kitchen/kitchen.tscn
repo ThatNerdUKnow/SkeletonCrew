@@ -29,7 +29,7 @@ script = ExtResource("1_pxxc8")
 
 [node name="Player" parent="." instance=ExtResource("1_6oqag")]
 z_index = 1
-position = Vector2(734, 77)
+position = Vector2(100, 300)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -72,21 +72,21 @@ texture = ExtResource("3_8ra3a")
 position = Vector2(-726, 157)
 
 [node name="Hazard2" parent="Hazards" instance=ExtResource("2_u0vuy")]
-position = Vector2(63, 83)
+position = Vector2(63, 45)
 
 [node name="Hazard3" parent="Hazards" instance=ExtResource("2_u0vuy")]
 position = Vector2(538, 467)
 
 [node name="Hazard4" parent="Hazards" instance=ExtResource("2_u0vuy")]
-position = Vector2(-133, 478)
+position = Vector2(476, 154)
 
 [node name="Hazard5" parent="Hazards" instance=ExtResource("2_u0vuy")]
 position = Vector2(-759, 480)
 
-[node name="TransitionArea" type="Area2D" parent="."]
+[node name="ToCarryoutArea" type="Area2D" parent="."]
 position = Vector2(605, 183)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToCarryoutArea"]
 position = Vector2(321.5, 14)
 shape = SubResource("RectangleShape2D_0dc5u")
 
@@ -97,5 +97,5 @@ script = ExtResource("6_u4c10")
 position = Vector2(-0.5, 530)
 shape = SubResource("RectangleShape2D_gg3pp")
 
-[connection signal="body_entered" from="TransitionArea" to="." method="_on_transition_area_body_entered"]
+[connection signal="body_entered" from="ToCarryoutArea" to="." method="_on_transition_area_body_entered"]
 [connection signal="body_entered" from="ToPrepRoomArea" to="ToPrepRoomArea" method="_on_body_entered"]
