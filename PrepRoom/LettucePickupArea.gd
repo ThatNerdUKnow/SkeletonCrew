@@ -13,6 +13,6 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	if _BurgerState.BurgerStep == 2:
+	if body.name == "Player":
 		LettucePickedUp.emit()
 	pass # Replace with function body.
