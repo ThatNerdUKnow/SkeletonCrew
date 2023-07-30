@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1cde27ge3l65"]
+[gd_scene load_steps=13 format=3 uid="uid://b1cde27ge3l65"]
 
+[ext_resource type="Script" path="res://PrepRoom/PrepRoom.gd" id="1_0emsl"]
 [ext_resource type="Texture2D" uid="uid://bvc6j0j0nwo8w" path="res://PrepRoom/Prep Room Template.png" id="1_nb5pg"]
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="2_1rm3t"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="3_kl4fb"]
@@ -25,6 +26,7 @@ size = Vector2(390, 130)
 size = Vector2(3781, 34.75)
 
 [node name="PrepRoom" type="Node2D"]
+script = ExtResource("1_0emsl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(15, -134)
@@ -32,7 +34,7 @@ scale = Vector2(1.96065, 1.96065)
 texture = ExtResource("1_nb5pg")
 
 [node name="Player" parent="." instance=ExtResource("2_1rm3t")]
-position = Vector2(21, -101)
+position = Vector2(21, 500)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-21, 101)
