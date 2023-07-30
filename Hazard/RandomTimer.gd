@@ -14,5 +14,5 @@ func _process(delta):
 	pass
 	
 func reset():
-	self.wait_time = randi_range(MIN_WAIT_TIME,MAX_WAIT_TIME)
+	self.wait_time = randf_range(MIN_WAIT_TIME,MAX_WAIT_TIME)
 	self.start()
