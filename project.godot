@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 BurgerState="*res://Autoload/BurgerState.gd"
 KitchenTransitionState="*res://Kitchen/KitchenTransitionState.gd"
+PrepRoomTransition="*res://PrepRoom/PrepRoomTransition.gd"
 
 [display]
 

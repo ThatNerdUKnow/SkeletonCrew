@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhdvi4j6r31jj"]
+[gd_scene load_steps=12 format=3 uid="uid://dhdvi4j6r31jj"]
 
 [ext_resource type="Texture2D" uid="uid://d1l8swnggre23" path="res://Carryout/Carryout Scene.png" id="1_jm1hd"]
 [ext_resource type="Script" path="res://Carryout/Carryout.gd" id="1_jpchq"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="2_22n7w"]
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="3_fjtbm"]
+[ext_resource type="Script" path="res://Carryout/ScoreArea.gd" id="5_6c5jt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_x1wwc"]
 distance = -1080.0
@@ -79,6 +80,7 @@ position = Vector2(-16, 36)
 shape = SubResource("RectangleShape2D_l5kic")
 
 [node name="ScoreArea" type="Area2D" parent="."]
+script = ExtResource("5_6c5jt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreArea"]
 position = Vector2(1146, 666)
@@ -86,3 +88,4 @@ shape = SubResource("RectangleShape2D_tjspw")
 
 [connection signal="body_entered" from="TransitionArea" to="." method="_on_transition_area_body_entered"]
 [connection signal="body_entered" from="ScoreArea" to="." method="_on_score_area_body_entered"]
+[connection signal="body_entered" from="ScoreArea" to="ScoreArea" method="_on_body_entered"]

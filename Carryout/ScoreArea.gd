@@ -1,6 +1,7 @@
 extends Area2D
 
-@onready var _TransitionState = get_node("/root/PrepRoomTransition")
+@onready var _BurgerState = get_node("/root/BurgerState")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,8 +13,6 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print("ToKitchen", body)
-	if body.name == "Player":
-		_TransitionState.entrance = _TransitionState.entranceVariant.Kitchen
-		get_tree().change_scene_to_file("res://Kitchen/kitchen.tscn")
+	if _BurgerState.BurgerStep == 4:
+		get_tree().change_scene_to_file("res://EndGame/End.tscn")
 	pass # Replace with function body.
