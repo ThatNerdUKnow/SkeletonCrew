@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1cde27ge3l65"]
+[gd_scene load_steps=12 format=3 uid="uid://b1cde27ge3l65"]
 
 [ext_resource type="Texture2D" uid="uid://bvc6j0j0nwo8w" path="res://PrepRoom/Prep Room Template.png" id="1_nb5pg"]
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="2_1rm3t"]
 [ext_resource type="PackedScene" uid="uid://d4fm56bbvjykt" path="res://Hazard/hazard.tscn" id="3_kl4fb"]
+[ext_resource type="Script" path="res://PrepRoom/ToFreezerArea.gd" id="4_b6str"]
+[ext_resource type="Script" path="res://PrepRoom/ToKitchenArea.gd" id="5_pn6oa"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1xh8e"]
 distance = -925.0
@@ -15,6 +17,12 @@ distance = -1896.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qys0p"]
 distance = -567.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjyfp"]
+size = Vector2(390, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n56u2"]
+size = Vector2(3781, 34.75)
 
 [node name="PrepRoom" type="Node2D"]
 
@@ -71,3 +79,20 @@ position = Vector2(947, 799)
 
 [node name="Hazard5" parent="." instance=ExtResource("3_kl4fb")]
 position = Vector2(-442, 777)
+
+[node name="ToFreezerArea" type="Area2D" parent="."]
+script = ExtResource("4_b6str")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToFreezerArea"]
+position = Vector2(71, -95)
+shape = SubResource("RectangleShape2D_yjyfp")
+
+[node name="ToKitchenArea" type="Area2D" parent="."]
+script = ExtResource("5_pn6oa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToKitchenArea"]
+position = Vector2(22.5, 905.375)
+shape = SubResource("RectangleShape2D_n56u2")
+
+[connection signal="body_entered" from="ToFreezerArea" to="ToFreezerArea" method="_on_body_entered"]
+[connection signal="body_entered" from="ToKitchenArea" to="ToKitchenArea" method="_on_body_entered"]
