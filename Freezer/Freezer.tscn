@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpe7ibqg0bpbq"]
+[gd_scene load_steps=5 format=3 uid="uid://vtj5yvv8evoj"]
 
-[ext_resource type="Texture2D" uid="uid://djx2vgryl8ami" path="res://Freezer/Freezer Template.png" id="1_gft2h"]
+[ext_resource type="Texture2D" uid="uid://dplu004kngd27" path="res://Freezer/Freezer.png" id="1_negsm"]
 [ext_resource type="PackedScene" uid="uid://b3vieuaijo4b" path="res://Player/player.tscn" id="2_54kkf"]
 [ext_resource type="Script" path="res://Freezer/ToPrepRoomArea.gd" id="3_6yc5u"]
 
@@ -12,7 +12,7 @@ size = Vector2(12478, 133)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(338, -1538)
 scale = Vector2(6.3353, 6.3353)
-texture = ExtResource("1_gft2h")
+texture = ExtResource("1_negsm")
 
 [node name="Player" parent="." instance=ExtResource("2_54kkf")]
 position = Vector2(101, 754)
